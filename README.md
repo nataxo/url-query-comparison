@@ -8,3 +8,5 @@ Use `Enter` to make compare urls instead of click.\
 Each param value from result tables is copied in clipboard by click.
 
 Hope you enjoy!
+
+Design inspiration by [zeit.co](https://zeit.co/design)
