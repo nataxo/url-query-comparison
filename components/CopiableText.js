@@ -4,7 +4,7 @@ const CopiableText  = ({value}) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
-        if (!value) {
+        if (value === null || value === undefined) {
             return;
         }
         navigator.clipboard.writeText(value).then(() => {

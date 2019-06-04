@@ -63,6 +63,10 @@ export default ({titles, values}) => (
                 position: relative;
                 vertical-align: top;
             }
+
+            td {
+                cursor: pointer;
+            }
         `}
         </style>
     </table>

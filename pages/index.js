@@ -121,7 +121,7 @@ export default () => {
                     display: flex;
                     flex-direction: column;
                 
-                    padding: 48px 48px;
+                    padding: 24px;
                     max-width: 100%;
                 }
                 
