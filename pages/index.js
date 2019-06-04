@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import Head from 'next/head';
 import TextField from '../components/TextField';
 import Snippet from '../components/Snippet';
 import Button from '../components/Button';
@@ -12,6 +13,8 @@ function GlobalStyles() {
                 box-sizing: border-box;
                 font-size: 14px;
                 font-family: Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 0;
             }
             
             ::selection {
@@ -49,7 +52,8 @@ export default () => {
     };
 
     useEffect(() =>
-        window && window.localStorage && setIgnore(window.localStorage.getItem('ignoreParams') || '' ), []
+        window && window.localStorage && setIgnore(window.localStorage.getItem('ignoreParams') || '' ),
+        []
     );
 
     useEffect(() => {
@@ -68,6 +72,10 @@ export default () => {
 
     return (
         <main>
+            <Head>
+                <title>Url Query Comparison</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1" />
+            </Head>
             <Snippet>
                 <TextField
                     label="First Url"
@@ -135,7 +143,7 @@ export default () => {
                 
                 @media screen and (max-width: 599px) {
                     main {
-                        padding: 8px;
+                        padding: 12px 8px;
                         width: 100%;
                         overflow-x: hidden;
                     }

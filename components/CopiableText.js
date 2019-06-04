@@ -25,6 +25,7 @@ const CopiableText  = ({value}) => {
                    word-break: break-all;
                    word-wrap: break-word;
                    position: relative;
+                   cursor: pointer;
                 }
                 
                 .copied {

@@ -32,7 +32,7 @@ export default ({children}) => (
                 }
             
                 div + div {
-                    margin-top: 12px;
+                    margin-top: 4px;
                 }
             }
         `}

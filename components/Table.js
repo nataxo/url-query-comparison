@@ -61,6 +61,7 @@ export default ({titles, values}) => (
             
                 border-bottom: 1px solid #eaeaea;
                 position: relative;
+                vertical-align: top;
             }
         `}
         </style>
