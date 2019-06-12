@@ -114,7 +114,7 @@ export default () => {
             {Boolean(equal.length) &&
                 <Snippet>
                     <h4>Equal</h4>
-                    <Table titles={['Key', 'Value']} values={equal} />
+                    <Table titles={['Param', 'Value']} values={equal} />
                 </Snippet>
             }
 
