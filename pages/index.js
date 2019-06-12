@@ -73,8 +73,11 @@ export default () => {
     return (
         <main>
             <Head>
-                <title>Url Query Comparison</title>
+                <title>Compare Urls</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1" />
+                <meta name="description" content="Comparator for url query parameters. Use it for large urls." />
+                <meta name="author" content="nataxo" />
+                <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon" />
             </Head>
             <Snippet>
                 <TextField
