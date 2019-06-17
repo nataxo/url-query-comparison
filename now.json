@@ -1,1 +1,5 @@
-{"version":2,"name":"url-query-comparison","builds":[{"src":"package.json","use":"@now/static-build"}]}
+{
+  "version":2,"name":"url-query-comparison",
+  "builds":[{"src":"package.json","use":"@now/static-build"}],
+  "alias": ["compare-urls.now.sh"]
+}
