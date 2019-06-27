@@ -1,10 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, Fragment} from 'react';
 import Head from 'next/head';
 import TextField from '../components/TextField';
 import Snippet from '../components/Snippet';
 import Button from '../components/Button';
 import Table from '../components/Table';
 import {compareUrls} from '../helpers/url';
+import Footer from '../components/Footer';
 
 function GlobalStyles() {
     return (
@@ -71,91 +72,94 @@ export default () => {
     });
 
     return (
-        <main>
-            <Head>
-                <title>Compare Urls</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1" />
-                <meta name="description" content="Comparator for url query parameters. Use it for large urls." />
-                <meta name="author" content="nataxo" />
-                <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-            </Head>
-            <Snippet>
-                <TextField
-                    label="First Url"
-                    value={firstUrl}
-                    onChange={setFirstUrl}
-                />
-                <TextField
-                    label="Second Url"
-                    value={secondUrl}
-                    onChange={setSecondUrl}
-                />
-                <TextField
-                    label="Ignore params"
-                    value={ignore}
-                    onChange={setIgnore}
-                    placeholder={'param1, param2, ...'}
-                    rows={1}
-                />
-
-                <div className="buttonGroup">
-                    <Button type="submit" onClick={compare}>Compare</Button>
-                    <Button type="reset" onClick={reset}>Clean</Button>
-                </div>
-            </Snippet>
-
-            <Snippet>
-                <h4>Difference</h4>
-                { !difference.length ? <div className="info">No differences</div> :
-                    <Table titles={['Param', 'First Url', 'Second Url']} values={difference}/>
-                }
-            </Snippet>
-
-            {Boolean(equal.length) &&
+        <Fragment>
+            <main>
+                <Head>
+                    <title>Compare Urls</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1" />
+                    <meta name="description" content="Comparator for url query parameters. Use it for large urls." />
+                    <meta name="author" content="nataxo" />
+                    <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+                </Head>
                 <Snippet>
-                    <h4>Equal</h4>
-                    <Table titles={['Param', 'Value']} values={equal} />
-                </Snippet>
-            }
+                    <TextField
+                        label="First Url"
+                        value={firstUrl}
+                        onChange={setFirstUrl}
+                    />
+                    <TextField
+                        label="Second Url"
+                        value={secondUrl}
+                        onChange={setSecondUrl}
+                    />
+                    <TextField
+                        label="Ignore params"
+                        value={ignore}
+                        onChange={setIgnore}
+                        placeholder={'param1, param2, ...'}
+                        rows={1}
+                    />
 
-            <GlobalStyles />
-            <style jsx>{`
-                main {
-                    display: flex;
-                    flex-direction: column;
-                
-                    padding: 24px;
-                    max-width: 100%;
+                    <div className="buttonGroup">
+                        <Button type="submit" onClick={compare}>Compare</Button>
+                        <Button type="reset" onClick={reset}>Clean</Button>
+                    </div>
+                </Snippet>
+
+                <Snippet>
+                    <h4>Difference</h4>
+                    { !difference.length ? <div className="info">No differences</div> :
+                        <Table titles={['Param', 'First Url', 'Second Url']} values={difference}/>
+                    }
+                </Snippet>
+
+                {Boolean(equal.length) &&
+                    <Snippet>
+                        <h4>Equal</h4>
+                        <Table titles={['Param', 'Value']} values={equal} />
+                    </Snippet>
                 }
-                
-                h4 {
-                    font-weight: bold;
-                    font-size: 18px;
-                    margin-bottom: 8px;
-                    margin-top: 0;
-                }
-     
-                .buttonGroup {
-                    display: flex;
-                    margin-top: 24px;
-                }
-                
-                .info {
-                    color: #666;
-                }
-                
-                @media screen and (max-width: 599px) {
+
+                <GlobalStyles />
+                <style jsx>{`
                     main {
-                        padding: 12px 8px;
-                        width: 100%;
-                        overflow-x: hidden;
+                        display: flex;
+                        flex-direction: column;
+                    
+                        padding: 24px;
+                        max-width: 100%;
                     }
                     
-                    .buttonGroup {
-                        margin-top: 16px;
+                    h4 {
+                        font-weight: bold;
+                        font-size: 18px;
+                        margin-bottom: 8px;
+                        margin-top: 0;
                     }
-                }
-            `}</style>
-        </main>
+         
+                    .buttonGroup {
+                        display: flex;
+                        margin-top: 24px;
+                    }
+                    
+                    .info {
+                        color: #666;
+                    }
+                    
+                    @media screen and (max-width: 599px) {
+                        main {
+                            padding: 12px 8px;
+                            width: 100%;
+                            overflow-x: hidden;
+                        }
+                        
+                        .buttonGroup {
+                            margin-top: 16px;
+                        }
+                    }
+                `}</style>
+            </main>
+            <Footer />
+        </Fragment>
     );
 }
