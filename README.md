@@ -1,6 +1,6 @@
 # Url Query Comparison
 
-https://url-query-comparison.nataxo.now.sh
+https://compare-urls.now.sh
 
 Aloha! My simple tool helps you to compare query parameters from large urls.
 
