@@ -1,31 +1,32 @@
-const getSearchParams = (href, ignoreParams) => {
-    try {
-        const result = {};
-        const url = new URL(href);
-        for (const entry of url.searchParams) {
-            if (!ignoreParams.includes(entry[0])) {
-                result[entry[0]] = entry[1];
-            }
+import UrlParser from 'url-parse';
+
+export const getQueryParams = (href, ignoreParams = []) => {
+    const url = new UrlParser(href, true);
+
+    return Object.entries(url.query).reduce((acc, [key, value]) => {
+        if (!ignoreParams.includes(key)) {
+            acc[key] = value;
         }
-        return result;
-    } catch (err) {
-        return {};
-    }
+
+        return acc;
+    }, {});
 };
 
-export const compareUrls = (firstHref, secondHref, ignoreParams = []) => {
-    const firstParams = getSearchParams(firstHref, ignoreParams);
-    const secondParams = getSearchParams(secondHref, ignoreParams);
+export const compareQueryParamsInUrls = (firstHref, secondHref, ignoreParams = []) => {
+    const firstParams = getQueryParams(firstHref, ignoreParams);
+    const secondParams = getQueryParams(secondHref, ignoreParams);
+
     const diff = [];
     const eq = [];
 
     Object.entries(firstParams).forEach(([key, value]) => {
-        if(secondParams.hasOwnProperty(key)){
-            if(secondParams[key] === firstParams[key]){
+        if (secondParams.hasOwnProperty(key)) {
+            if (secondParams[key] === firstParams[key]) {
                 eq.push([key, value]);
             } else {
                 diff.push([key, value, secondParams[key]]);
             }
+
             delete secondParams[key];
         } else {
             diff.push([key, value, null]);
@@ -36,5 +37,5 @@ export const compareUrls = (firstHref, secondHref, ignoreParams = []) => {
         diff.push([key, null, value]);
     });
 
-    return [diff, eq];
+    return {diff, eq};
 };
