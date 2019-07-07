@@ -1,10 +1,10 @@
-import {useState, useEffect, Fragment} from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import Head from 'next/head';
 import TextField from '../components/TextField';
 import Snippet from '../components/Snippet';
 import Button from '../components/Button';
 import Table from '../components/Table';
-import {compareQueryParamsInUrls} from '../helpers/url';
+import { compareQueryParamsInUrls } from '../helpers/url';
 import Footer from '../components/Footer';
 
 function GlobalStyles() {
@@ -16,6 +16,7 @@ function GlobalStyles() {
                 font-family: Helvetica, Arial, sans-serif;
                 margin: 0;
                 padding: 0;
+                color: #111111;
             }
             
             ::selection {
@@ -31,6 +32,10 @@ function GlobalStyles() {
         `}</style>
     );
 }
+
+const FIRST_URL_PLACEHOLDER = "first.com?alpha=1&beta=2";
+const SECOND_URL_PLACEHOLDER = "second.com?beta=3&gamma=2";
+const IGNORE_PLACEHOLDER = 'beta,zetta';
 
 export default () => {
     const [firstUrl, setFirstUrl] = useState('');
@@ -50,9 +55,9 @@ export default () => {
         try {
             localStorage.setItem('ignoreParams', ignore);
             ignoreParams = ignore.replace(' ', '').split(',');
-        } catch (e) {}
+        } catch (e) { }
 
-        const {diff, eq} = compareQueryParamsInUrls(firstUrl, secondUrl, ignoreParams);
+        const { diff, eq } = compareQueryParamsInUrls(firstUrl, secondUrl, ignoreParams);
         setDifference(diff);
         setEqual(eq);
     };
@@ -60,7 +65,7 @@ export default () => {
     useEffect(() => {
         try {
             setIgnore(localStorage.getItem('ignoreParams') || '')
-        } catch (e) {}
+        } catch (e) { }
     }, []);
 
     useEffect(() => {
@@ -93,17 +98,19 @@ export default () => {
                         label="First Url"
                         value={firstUrl}
                         onChange={setFirstUrl}
+                        placeholder={FIRST_URL_PLACEHOLDER}
                     />
                     <TextField
                         label="Second Url"
                         value={secondUrl}
                         onChange={setSecondUrl}
+                        placeholder={SECOND_URL_PLACEHOLDER}
                     />
                     <TextField
                         label="Ignore params"
                         value={ignore}
                         onChange={setIgnore}
-                        placeholder={'param1, param2, ...'}
+                        placeholder={IGNORE_PLACEHOLDER}
                         rows={1}
                     />
 
@@ -114,7 +121,7 @@ export default () => {
                 </Snippet>
 
                 <Snippet>
-                    <h3>Difference</h3>
+                    <h2>Difference</h2>
                     {difference.length > 0
                         ? <Table titles={['Param', 'First Url', 'Second Url']} values={difference} />
                         : <div className="info">No differences</div>
@@ -123,7 +130,7 @@ export default () => {
 
                 {equal.length > 0 && (
                     <Snippet>
-                        <h3>Equal</h3>
+                        <h2>Equal</h2>
                         <Table titles={['Param', 'Value']} values={equal} />
                     </Snippet>
                 )}
@@ -138,13 +145,12 @@ export default () => {
                         max-width: 100%;
                     }
                     
-                    h4 {
+                    h1, h2 {
                         font-weight: bold;
                         font-size: 18px;
-                        margin-bottom: 8px;
-                        margin-top: 0;
+                        margin-bottom: 12px;
                     }
-         
+
                     .buttonGroup {
                         display: flex;
                         margin-top: 24px;
