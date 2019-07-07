@@ -59,7 +59,7 @@ export default () => {
 
     useEffect(() => {
         try {
-            setIgnore(window.localStorage.getItem('ignoreParams') || '')
+            setIgnore(localStorage.getItem('ignoreParams') || '')
         } catch (e) {}
     }, []);
 
@@ -115,9 +115,9 @@ export default () => {
 
                 <Snippet>
                     <h3>Difference</h3>
-                    {!difference.length > 0
-                        ? <div className="info">No differences</div>
-                        : <Table titles={['Param', 'First Url', 'Second Url']} values={difference} />
+                    {difference.length > 0
+                        ? <Table titles={['Param', 'First Url', 'Second Url']} values={difference} />
+                        : <div className="info">No differences</div>
                     }
                 </Snippet>
 
