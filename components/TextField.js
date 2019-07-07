@@ -1,9 +1,9 @@
-export default ({ label, value, onChange, placeholder, rows = 2 }) => (
+export default ({id, label, value, onChange, placeholder, rows = 2 }) => (
     <div>
-        <label htmlFor={label}>{label}</label>
+        <label htmlFor={id}>{label}</label>
         <textarea
             type="text"
-            id={label}
+            id={id}
             value={value}
             onChange={e => onChange(e.target.value)}
             placeholder={placeholder}

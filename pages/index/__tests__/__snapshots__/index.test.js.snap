@@ -1,0 +1,488 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexPage should match snapshot by default 1`] = `
+<Fragment>
+  <main
+    className="jsx-3318004513"
+  >
+    <Head>
+      <title
+        className="jsx-3318004513"
+      >
+        Compare Urls
+      </title>
+      <meta
+        className="jsx-3318004513"
+        content="initial-scale=1.0, width=device-width, maximum-scale=1"
+        name="viewport"
+      />
+      <meta
+        className="jsx-3318004513"
+        content="Comparator for url query parameters. Use it for large urls."
+        name="description"
+      />
+      <meta
+        className="jsx-3318004513"
+        content="nataxo"
+        name="author"
+      />
+      <link
+        className="jsx-3318004513"
+        href="/static/favicon.ico"
+        rel="shortcut icon"
+        type="image/x-icon"
+      />
+    </Head>
+    <h1
+      className="jsx-3318004513"
+    >
+      Compare Urls
+    </h1>
+    <_default>
+      <_default
+        id="first-url"
+        label="First Url"
+        onChange={[Function]}
+        placeholder="first.com?alpha=1&beta=2"
+        value=""
+      />
+      <_default
+        id="second-url"
+        label="Second Url"
+        onChange={[Function]}
+        placeholder="second.com?beta=3&gamma=2"
+        value=""
+      />
+      <_default
+        id="ignore-params"
+        label="Ignore params"
+        onChange={[Function]}
+        placeholder="beta,zetta"
+        rows={1}
+        value=""
+      />
+      <div
+        className="jsx-3318004513 buttonGroup"
+      >
+        <_default
+          onClick={[Function]}
+          type="submit"
+        >
+          Compare
+        </_default>
+        <_default
+          onClick={[Function]}
+          type="reset"
+        >
+          Clean
+        </_default>
+      </div>
+    </_default>
+    <_default>
+      <h2
+        className="jsx-3318004513"
+      >
+        Difference
+      </h2>
+      <div
+        className="jsx-3318004513 info"
+      >
+        No differences
+      </div>
+    </_default>
+    <GlobalStyles />
+    <JSXStyle
+      id="3318004513"
+    >
+      main.jsx-3318004513{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:24px;max-width:100%;}h1.jsx-3318004513,h2.jsx-3318004513{font-weight:bold;font-size:18px;margin-bottom:12px;}.buttonGroup.jsx-3318004513{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:24px;}.info.jsx-3318004513{color:#666;}@media screen and (max-width:599px){main.jsx-3318004513{padding:12px 8px;width:100%;overflow-x:hidden;}.buttonGroup.jsx-3318004513{margin-top:16px;}}
+    </JSXStyle>
+  </main>
+  <Footer />
+</Fragment>
+`;
+
+exports[`IndexPage should match snapshot with query params 1`] = `
+<IndexPage>
+  <main
+    className="jsx-3318004513"
+  >
+    <Head>
+      <SideEffect
+        handleStateChange={null}
+        isAmp={false}
+        reduceComponentsToState={[Function]}
+      />
+    </Head>
+    <h1
+      className="jsx-3318004513"
+    >
+      Compare Urls
+    </h1>
+    <_default>
+      <div
+        className="jsx-857942662"
+      >
+        <_default
+          id="first-url"
+          label="First Url"
+          onChange={[Function]}
+          placeholder="first.com?alpha=1&beta=2"
+          value="https://github.com?a=1"
+        >
+          <div
+            className="jsx-1586499130"
+          >
+            <label
+              className="jsx-1586499130"
+              htmlFor="first-url"
+            >
+              First Url
+            </label>
+            <textarea
+              className="jsx-1586499130"
+              id="first-url"
+              onChange={[Function]}
+              placeholder="first.com?alpha=1&beta=2"
+              rows={2}
+              type="text"
+              value="https://github.com?a=1"
+            />
+            <JSXStyle
+              id="1586499130"
+            />
+          </div>
+        </_default>
+        <_default
+          id="second-url"
+          label="Second Url"
+          onChange={[Function]}
+          placeholder="second.com?beta=3&gamma=2"
+          value="https://github.com?b=1"
+        >
+          <div
+            className="jsx-1586499130"
+          >
+            <label
+              className="jsx-1586499130"
+              htmlFor="second-url"
+            >
+              Second Url
+            </label>
+            <textarea
+              className="jsx-1586499130"
+              id="second-url"
+              onChange={[Function]}
+              placeholder="second.com?beta=3&gamma=2"
+              rows={2}
+              type="text"
+              value="https://github.com?b=1"
+            />
+            <JSXStyle
+              id="1586499130"
+            />
+          </div>
+        </_default>
+        <_default
+          id="ignore-params"
+          label="Ignore params"
+          onChange={[Function]}
+          placeholder="beta,zetta"
+          rows={1}
+          value="test"
+        >
+          <div
+            className="jsx-1586499130"
+          >
+            <label
+              className="jsx-1586499130"
+              htmlFor="ignore-params"
+            >
+              Ignore params
+            </label>
+            <textarea
+              className="jsx-1586499130"
+              id="ignore-params"
+              onChange={[Function]}
+              placeholder="beta,zetta"
+              rows={1}
+              type="text"
+              value="test"
+            />
+            <JSXStyle
+              id="1586499130"
+            />
+          </div>
+        </_default>
+        <div
+          className="jsx-3318004513 buttonGroup"
+        >
+          <_default
+            onClick={[Function]}
+            type="submit"
+          >
+            <button
+              className="jsx-2390594244"
+              onClick={[Function]}
+              type="submit"
+            >
+              Compare
+              <JSXStyle
+                id="2390594244"
+              />
+            </button>
+          </_default>
+          <_default
+            onClick={[Function]}
+            type="reset"
+          >
+            <button
+              className="jsx-2390594244"
+              onClick={[Function]}
+              type="reset"
+            >
+              Clean
+              <JSXStyle
+                id="2390594244"
+              />
+            </button>
+          </_default>
+        </div>
+        <JSXStyle
+          id="857942662"
+        />
+      </div>
+    </_default>
+    <_default>
+      <div
+        className="jsx-857942662"
+      >
+        <h2
+          className="jsx-3318004513"
+        >
+          Difference
+        </h2>
+        <_default
+          titles={
+            Array [
+              "Param",
+              "First Url",
+              "Second Url",
+            ]
+          }
+          values={
+            Array [
+              Array [
+                "a",
+                "1",
+                null,
+              ],
+              Array [
+                "b",
+                null,
+                "1",
+              ],
+            ]
+          }
+        >
+          <table
+            className="jsx-828594969"
+          >
+            <thead
+              className="jsx-828594969"
+            >
+              <tr
+                className="jsx-828594969"
+              >
+                <th
+                  className="jsx-828594969"
+                  key="0"
+                >
+                  Param
+                </th>
+                <th
+                  className="jsx-828594969"
+                  key="1"
+                >
+                  First Url
+                </th>
+                <th
+                  className="jsx-828594969"
+                  key="2"
+                >
+                  Second Url
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              className="jsx-828594969"
+            >
+              <tr
+                className="jsx-828594969"
+                key="0"
+              >
+                <td
+                  className="jsx-828594969"
+                  key="0"
+                >
+                  <CopiableText
+                    value="a"
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      a
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+                <td
+                  className="jsx-828594969"
+                  key="1"
+                >
+                  <CopiableText
+                    value="1"
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      1
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+                <td
+                  className="jsx-828594969"
+                  key="2"
+                >
+                  <CopiableText
+                    value={null}
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      -
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+              </tr>
+              <tr
+                className="jsx-828594969"
+                key="1"
+              >
+                <td
+                  className="jsx-828594969"
+                  key="0"
+                >
+                  <CopiableText
+                    value="b"
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      b
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+                <td
+                  className="jsx-828594969"
+                  key="1"
+                >
+                  <CopiableText
+                    value={null}
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      -
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+                <td
+                  className="jsx-828594969"
+                  key="2"
+                >
+                  <CopiableText
+                    value="1"
+                  >
+                    <span
+                      className="jsx-3977535312 "
+                      onClick={[Function]}
+                    >
+                      1
+                      <JSXStyle
+                        id="3977535312"
+                      />
+                    </span>
+                  </CopiableText>
+                </td>
+              </tr>
+            </tbody>
+            <JSXStyle
+              id="828594969"
+            />
+          </table>
+        </_default>
+        <JSXStyle
+          id="857942662"
+        />
+      </div>
+    </_default>
+    <GlobalStyles>
+      <JSXStyle
+        id="3910046560"
+      />
+    </GlobalStyles>
+    <JSXStyle
+      id="3318004513"
+    />
+  </main>
+  <Footer>
+    <footer
+      className="jsx-1479092035"
+    >
+      <a
+        className="jsx-1479092035"
+        href="https://github.com/nataxo/url-query-comparison"
+        rel="nofollow noreferrer noopen"
+        target="_blank"
+        title="Github: nataxo/url-query-comparison"
+      >
+        <Octocat>
+          <svg
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 0C5.36987 0 0 5.36987 0 12C0 17.6395 3.86962 22.32 9.09038 23.6395C9.03013 23.4894 9.00051 23.279 9.00051 23.0696V21.0291H7.50026C6.69038 21.0291 5.93974 20.6696 5.60987 20.0089C5.21974 19.2889 5.15949 18.1787 4.16987 17.4883C3.86962 17.2483 4.10962 17.0083 4.43949 17.038C5.06962 17.2177 5.57923 17.6385 6.05923 18.2676C6.53923 18.8977 6.74962 19.0478 7.64936 19.0478C8.06911 19.0478 8.72885 19.0182 9.32936 18.9273C9.65923 18.0868 10.2291 17.3372 10.9195 16.9777C6.89974 16.4977 4.97974 14.5174 4.97974 11.8172C4.97974 10.6468 5.48936 9.53668 6.32987 8.57668C6.06026 7.6463 5.69974 5.7263 6.45038 4.97668C8.25089 4.97668 9.33038 6.14706 9.6 6.4463C10.4997 6.14604 11.4904 5.9663 12.5096 5.9663C13.5595 5.9663 14.5195 6.14604 15.4192 6.4463C15.6889 6.14604 16.7694 4.97668 18.5689 4.97668C19.2889 5.69668 18.959 7.6463 18.6587 8.57668C19.4992 9.50706 19.9792 10.6468 19.9792 11.8172C19.9792 14.5174 18.0889 16.4977 14.0997 16.9174C15.2099 17.4873 15.9901 19.1071 15.9901 20.3071V23.04C15.9901 23.1299 15.9605 23.2197 15.9605 23.3096C20.64 21.6899 24 17.2504 24 12C24 5.36987 18.6301 0 12 0Z"
+              fill="#000"
+            />
+          </svg>
+        </Octocat>
+      </a>
+      <JSXStyle
+        id="1479092035"
+      />
+    </footer>
+  </Footer>
+</IndexPage>
+`;

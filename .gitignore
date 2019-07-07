@@ -2,6 +2,7 @@ node_modules
 
 # Builds
 .next
+dist
 
 # Logs
 logs
