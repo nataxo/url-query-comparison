@@ -1,4 +1,4 @@
-export default ({label, value, onChange, placeholder, rows=2}) => (
+export default ({ label, value, onChange, placeholder, rows = 2 }) => (
     <div>
         <label htmlFor={label}>{label}</label>
         <textarea
@@ -26,7 +26,7 @@ export default ({label, value, onChange, placeholder, rows=2}) => (
 
             label {
                 display: block;
-                color: #666;
+                
             }
             
             label + textarea {
@@ -38,9 +38,7 @@ export default ({label, value, onChange, placeholder, rows=2}) => (
                 border-radius: 5px;
                 border-width: 1px;
                 border-style: solid;
-            }
-            
-            textarea {
+                
                 width: 100%;
                 max-width: 100%;
                 padding: 8px 8px;
@@ -52,7 +50,11 @@ export default ({label, value, onChange, placeholder, rows=2}) => (
             
             textarea:focus {
                 border-color: #7D7D7D;
-            }     
+            }
+            
+            textarea::placeholder {
+                color: #999999;
+            }
         `}</style>
     </div>
 );

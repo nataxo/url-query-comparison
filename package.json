@@ -2,6 +2,7 @@
   "scripts": {
     "now-build": "next build && next export -o dist",
     "now-dev": "next -p $PORT",
+    "dev": "next -p 2401",
     "test": "jest"
   },
   "dependencies": {
