@@ -4,4 +4,5 @@ const Octocat = () => (
         </path>
     </svg>
 );
+
 export default Octocat;
