@@ -4,7 +4,7 @@ import TextField from '../components/TextField';
 import Snippet from '../components/Snippet';
 import Button from '../components/Button';
 import Table from '../components/Table';
-import {compareUrls} from '../helpers/url';
+import {compareQueryParamsInUrls} from '../helpers/url';
 import Footer from '../components/Footer';
 
 function GlobalStyles() {
@@ -45,20 +45,26 @@ export default () => {
     };
 
     const compare = () => {
-        localStorage.setItem('ignoreParams', ignore);
-        const ignoreParams = ignore.replace(' ', '').split(',');
-        const [diff, eq] = compareUrls(firstUrl, secondUrl, ignoreParams);
+        let ignoreParams = '';
+
+        try {
+            localStorage.setItem('ignoreParams', ignore);
+            ignoreParams = ignore.replace(' ', '').split(',');
+        } catch (e) {}
+
+        const {diff, eq} = compareQueryParamsInUrls(firstUrl, secondUrl, ignoreParams);
         setDifference(diff);
         setEqual(eq);
     };
 
-    useEffect(() =>
-        window && window.localStorage && setIgnore(window.localStorage.getItem('ignoreParams') || '' ),
-        []
-    );
+    useEffect(() => {
+        try {
+            setIgnore(localStorage.getItem('ignoreParams') || '')
+        } catch (e) {}
+    }, []);
 
     useEffect(() => {
-        const onKeyDown = function(event) {
+        const onKeyDown = function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
                 compare();
@@ -68,7 +74,7 @@ export default () => {
 
         return function unsubscribe() {
             window.removeEventListener('keydown', onKeyDown);
-        }
+        };
     });
 
     return (
@@ -81,6 +87,7 @@ export default () => {
                     <meta name="author" content="nataxo" />
                     <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon" />
                 </Head>
+                <h1>Compare Urls</h1>
                 <Snippet>
                     <TextField
                         label="First Url"
@@ -107,18 +114,19 @@ export default () => {
                 </Snippet>
 
                 <Snippet>
-                    <h4>Difference</h4>
-                    { !difference.length ? <div className="info">No differences</div> :
-                        <Table titles={['Param', 'First Url', 'Second Url']} values={difference}/>
+                    <h3>Difference</h3>
+                    {difference.length > 0
+                        ? <Table titles={['Param', 'First Url', 'Second Url']} values={difference} />
+                        : <div className="info">No differences</div>
                     }
                 </Snippet>
 
-                {Boolean(equal.length) &&
+                {equal.length > 0 && (
                     <Snippet>
-                        <h4>Equal</h4>
+                        <h3>Equal</h3>
                         <Table titles={['Param', 'Value']} values={equal} />
                     </Snippet>
-                }
+                )}
 
                 <GlobalStyles />
                 <style jsx>{`
