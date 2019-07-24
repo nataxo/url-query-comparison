@@ -43,7 +43,8 @@ export default ({ label, value, onChange, placeholder, rows = 2 }) => (
                 width: 100%;
                 max-width: 100%;
                 padding: 8px 8px;
-                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
                 border-color: #E1E1E1;
                 transition: border 0.2s ease 0s, color 0.2s ease 0s;
                 outline: none;
