@@ -38,7 +38,8 @@ export default ({ label, value, onChange, placeholder, rows = 2 }) => (
                 border-radius: 5px;
                 border-width: 1px;
                 border-style: solid;
-                
+                box-shadow: none;
+
                 width: 100%;
                 max-width: 100%;
                 padding: 8px 8px;

@@ -22,6 +22,18 @@ function GlobalStyles() {
             ::selection {
                 background-color: #79FFE1;
             }
+            
+            :active,
+            :focus:hover {
+                outline: none;
+            }
+            
+            :focus {
+                outline-color: #0366D6;
+                outline-width: 2px;
+                outline-style: solid;
+                outline-offset: 1px;
+            }
 
             html, body {
                 width: 100vw;
