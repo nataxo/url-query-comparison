@@ -7,12 +7,14 @@ const CopiableText  = ({value}) => {
         if (value === null || value === undefined) {
             return;
         }
-        navigator.clipboard.writeText(value).then(() => {
-            setCopied(true);
-            setTimeout(() => {
-                setCopied(false);
-            }, 1500);
-        });
+        if (navigator && navigator.clipboard) {
+            navigator.clipboard.writeText(value).then(() => {
+                setCopied(true);
+                setTimeout(() => {
+                    setCopied(false);
+                }, 1500);
+            });
+        }
     };
 
     return (
