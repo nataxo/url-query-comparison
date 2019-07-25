@@ -18,16 +18,20 @@ const CopiableText  = ({value}) => {
     };
 
     return (
-        <span onClick={handleClick} className={copied && 'copied'}>
-           {value || '-'}
+        <button onClick={handleClick}>
+            <span  className={copied && 'copied'}>{value || '-'}</span>
             <style jsx>{`
-                span {
+                button {
                    display: inline-block;
                    max-width: 100%;
                    word-break: break-all;
                    word-wrap: break-word;
                    position: relative;
                    cursor: pointer;
+                   
+                   border: none;
+                   text-decoration: none;
+                   user-select: none;
                 }
                 
                 .copied {
@@ -40,7 +44,7 @@ const CopiableText  = ({value}) => {
                     position: absolute;
                     left: 0;
                     top: 0;
-                    color: #0076FF;
+                    color: #0366D6;
                     visibility: visible;
                 
                     word-break: normal;
@@ -49,7 +53,7 @@ const CopiableText  = ({value}) => {
                 }
            `}
            </style>
-       </span>
+       </button>
     );
 };
 
