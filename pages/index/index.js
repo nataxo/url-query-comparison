@@ -61,11 +61,12 @@ const IndexPage = () => {
     const [difference, setDifference] = useState([]);
     const [equal, setEqual] = useState([]);
 
-    const compare = (first, second, ignore = '') => {
-        const ignoreParams = ignore.replace(' ', '').split(',');
+    const compare = (first, second, ignore) => {
+        const ignoreValue = ignore != undefined ? ignore : '';
+        const ignoreParams = ignoreValue.replace(' ', '').split(',');
 
         try {
-            localStorage.setItem('ignoreParams', ignore);
+            localStorage.setItem('ignoreParams', ignoreValue);
         } catch (e) {}
 
         const { diff, eq } = compareQueryParamsInUrls(first, second, ignoreParams);

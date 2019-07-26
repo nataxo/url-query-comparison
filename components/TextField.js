@@ -4,7 +4,7 @@ export default ({id, label, value, onChange, placeholder, rows = 2 }) => (
         <textarea
             type="text"
             id={id}
-            value={value}
+            value={value || ''}
             onChange={e => onChange(e.target.value)}
             placeholder={placeholder}
             rows={rows}

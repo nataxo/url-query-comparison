@@ -13,7 +13,6 @@ describe('IndexPage', () => {
         const query = {
             first: 'https://github.com?a=1',
             second: 'https://github.com?b=1',
-            ignore: 'test',
         };
         const props = await IndexPage.getInitialProps({query});
         const component = mount(

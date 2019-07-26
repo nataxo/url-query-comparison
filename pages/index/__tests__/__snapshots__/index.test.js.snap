@@ -107,9 +107,9 @@ exports[`IndexPage should match snapshot with query params 1`] = `
     className="jsx-3318004513"
   >
     <Head>
-      <SideEffect
+      <Component
         handleStateChange={null}
-        isAmp={false}
+        inAmpMode={false}
         reduceComponentsToState={[Function]}
       />
     </Head>
@@ -130,16 +130,16 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           value="https://github.com?a=1"
         >
           <div
-            className="jsx-1586499130"
+            className="jsx-3489977896"
           >
             <label
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               htmlFor="first-url"
             >
               First Url
             </label>
             <textarea
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               id="first-url"
               onChange={[Function]}
               placeholder="first.com?alpha=1&beta=2"
@@ -148,7 +148,7 @@ exports[`IndexPage should match snapshot with query params 1`] = `
               value="https://github.com?a=1"
             />
             <JSXStyle
-              id="1586499130"
+              id="3489977896"
             />
           </div>
         </_default>
@@ -160,16 +160,16 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           value="https://github.com?b=1"
         >
           <div
-            className="jsx-1586499130"
+            className="jsx-3489977896"
           >
             <label
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               htmlFor="second-url"
             >
               Second Url
             </label>
             <textarea
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               id="second-url"
               onChange={[Function]}
               placeholder="second.com?beta=3&gamma=2"
@@ -178,7 +178,7 @@ exports[`IndexPage should match snapshot with query params 1`] = `
               value="https://github.com?b=1"
             />
             <JSXStyle
-              id="1586499130"
+              id="3489977896"
             />
           </div>
         </_default>
@@ -188,28 +188,28 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           onChange={[Function]}
           placeholder="beta,zetta"
           rows={1}
-          value="test"
+          value={null}
         >
           <div
-            className="jsx-1586499130"
+            className="jsx-3489977896"
           >
             <label
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               htmlFor="ignore-params"
             >
               Ignore params
             </label>
             <textarea
-              className="jsx-1586499130"
+              className="jsx-3489977896"
               id="ignore-params"
               onChange={[Function]}
               placeholder="beta,zetta"
               rows={1}
               type="text"
-              value="test"
+              value=""
             />
             <JSXStyle
-              id="1586499130"
+              id="3489977896"
             />
           </div>
         </_default>
@@ -327,15 +327,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value="a"
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      a
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        a
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
                 <td
@@ -345,15 +349,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value="1"
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      1
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        1
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
                 <td
@@ -363,15 +371,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value={null}
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      -
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        -
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
               </tr>
@@ -386,15 +398,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value="b"
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      b
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        b
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
                 <td
@@ -404,15 +420,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value={null}
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      -
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        -
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
                 <td
@@ -422,15 +442,19 @@ exports[`IndexPage should match snapshot with query params 1`] = `
                   <CopiableText
                     value="1"
                   >
-                    <span
-                      className="jsx-3977535312 "
+                    <button
+                      className="jsx-4209007883"
                       onClick={[Function]}
                     >
-                      1
+                      <span
+                        className="jsx-4209007883 "
+                      >
+                        1
+                      </span>
                       <JSXStyle
-                        id="3977535312"
+                        id="4209007883"
                       />
-                    </span>
+                    </button>
                   </CopiableText>
                 </td>
               </tr>
@@ -447,7 +471,7 @@ exports[`IndexPage should match snapshot with query params 1`] = `
     </_default>
     <GlobalStyles>
       <JSXStyle
-        id="3910046560"
+        id="2843426724"
       />
     </GlobalStyles>
     <JSXStyle
