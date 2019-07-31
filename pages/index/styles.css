@@ -12,12 +12,12 @@ h1, h2 {
     margin-bottom: 12px;
 }
 
-.buttonGroup {
+buttonGroup {
     display: flex;
     margin-top: 24px;
 }
 
-.info {
+info {
     color: #666;
 }
 
@@ -28,7 +28,7 @@ h1, h2 {
         overflow-x: hidden;
     }
 
-    .buttonGroup {
+    buttonGroup {
         margin-top: 16px;
     }
 }

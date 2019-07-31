@@ -6,7 +6,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

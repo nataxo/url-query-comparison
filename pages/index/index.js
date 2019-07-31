@@ -157,17 +157,17 @@ const IndexPage = () => {
                         rows={1}
                     />
 
-                    <div className={styles.buttonGroup}>
+                    <buttonGroup>
                         <Button type="submit" onClick={onSubmit}>Compare</Button>
                         <Button type="reset" onClick={onReset}>Clean</Button>
-                    </div>
+                    </buttonGroup>
                 </Snippet>
 
                 <Snippet>
                     <h2>Difference</h2>
                     {difference.length > 0
                         ? <Table titles={['Param', 'First Url', 'Second Url']} values={difference} />
-                        : <div className="info">No differences</div>
+                        : <info>No differences</info>
                     }
                 </Snippet>
 

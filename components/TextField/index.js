@@ -2,7 +2,7 @@ import styled from 'reshadow';
 import styles from './styles.css';
 
 export default ({id, label, value, onChange, placeholder, rows = 2 }) => styled(styles)(
-    <div>
+    <wrapper>
         <label htmlFor={id}>{label}</label>
         <textarea
             type="text"
@@ -12,5 +12,5 @@ export default ({id, label, value, onChange, placeholder, rows = 2 }) => styled(
             placeholder={placeholder}
             rows={rows}
         />
-    </div>
+    </wrapper>
 );

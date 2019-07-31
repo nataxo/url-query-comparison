@@ -1,13 +1,13 @@
-div {
+wrapper {
     overflow: hidden;
 }
 
-div + div {
+wrapper + wrapper {
     margin-top: 16px;
 }
 
 @media screen and (max-width: 599px) {
-    div + div {
+    wrapper + wrapper {
         margin-top: 12px;
     }
 }

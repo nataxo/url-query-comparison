@@ -11,11 +11,11 @@ button {
     user-select: none;
 }
 
-.copied {
+text[use|copied] {
     visibility: hidden;
 }
 
-.copied:after {
+text[use|copied]:after {
     content: 'Copied!';
     display: inline-block;
     position: absolute;

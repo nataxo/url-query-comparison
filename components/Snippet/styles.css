@@ -1,4 +1,4 @@
-div {
+wrapper {
     display: block;
     max-width: 100%;
     flex-grow: 1;
@@ -14,12 +14,12 @@ div {
     overflow: hidden;
 }
 
-div + div {
+wrapper + wrapper {
     margin-top: 24px;
 }
 
 @media screen and (max-width: 599px) {
-    div {
+    wrapper {
         padding-left: 4px;
         padding-right: 4px;
 

@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import styled from 'reshadow';
-import cn from 'classnames';
 
 import styles from './styles.css';
 
@@ -24,7 +23,7 @@ const CopiableText  = ({value}) => {
 
     return styled(styles)(
         <button onClick={handleClick}>
-            <span className={cn({[styles.copied]: copied})}>{value || '-'}</span>
+            <text as="span" use:copied={copied}>{value || '-'}</text>
         </button>
     );
 };
