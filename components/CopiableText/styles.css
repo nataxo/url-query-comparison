@@ -1,0 +1,30 @@
+button {
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+    position: relative;
+    cursor: pointer;
+
+    border: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+text[use|copied] {
+    visibility: hidden;
+}
+
+text[use|copied]:after {
+    content: 'Copied!';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0366D6;
+    visibility: visible;
+
+    word-break: normal;
+    word-wrap: normal;
+    overflow: visible;
+}

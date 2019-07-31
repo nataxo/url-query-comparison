@@ -3,38 +3,32 @@
 exports[`IndexPage should match snapshot by default 1`] = `
 <Fragment>
   <main
-    className="jsx-3318004513"
+    className="___main_ydkmr_1"
   >
     <Head>
-      <title
-        className="jsx-3318004513"
-      >
+      <title>
         Compare Urls
       </title>
       <meta
-        className="jsx-3318004513"
         content="initial-scale=1.0, width=device-width, maximum-scale=1"
         name="viewport"
       />
       <meta
-        className="jsx-3318004513"
         content="Comparator for url query parameters. Use it for large urls."
         name="description"
       />
       <meta
-        className="jsx-3318004513"
         content="nataxo"
         name="author"
       />
       <link
-        className="jsx-3318004513"
         href="/static/favicon.ico"
         rel="shortcut icon"
         type="image/x-icon"
       />
     </Head>
     <h1
-      className="jsx-3318004513"
+      className="___h1_ydkmr_1"
     >
       Compare Urls
     </h1>
@@ -62,7 +56,7 @@ exports[`IndexPage should match snapshot by default 1`] = `
         value=""
       />
       <div
-        className="jsx-3318004513 buttonGroup"
+        className="___buttonGroup_ydkmr_1"
       >
         <_default
           onClick={[Function]}
@@ -80,22 +74,16 @@ exports[`IndexPage should match snapshot by default 1`] = `
     </_default>
     <_default>
       <h2
-        className="jsx-3318004513"
+        className="___h2_ydkmr_1"
       >
         Difference
       </h2>
       <div
-        className="jsx-3318004513 info"
+        className="___info_ydkmr_1"
       >
         No differences
       </div>
     </_default>
-    <GlobalStyles />
-    <JSXStyle
-      id="3318004513"
-    >
-      main.jsx-3318004513{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:24px;max-width:100%;}h1.jsx-3318004513,h2.jsx-3318004513{font-weight:bold;font-size:18px;margin-bottom:12px;}.buttonGroup.jsx-3318004513{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:24px;}.info.jsx-3318004513{color:#666;}@media screen and (max-width:599px){main.jsx-3318004513{padding:12px 8px;width:100%;overflow-x:hidden;}.buttonGroup.jsx-3318004513{margin-top:16px;}}
-    </JSXStyle>
   </main>
   <Footer />
 </Fragment>
@@ -104,7 +92,7 @@ exports[`IndexPage should match snapshot by default 1`] = `
 exports[`IndexPage should match snapshot with query params 1`] = `
 <IndexPage>
   <main
-    className="jsx-3318004513"
+    className="___main_ydkmr_1"
   >
     <Head>
       <Component
@@ -114,13 +102,13 @@ exports[`IndexPage should match snapshot with query params 1`] = `
       />
     </Head>
     <h1
-      className="jsx-3318004513"
+      className="___h1_ydkmr_1"
     >
       Compare Urls
     </h1>
     <_default>
       <div
-        className="jsx-857942662"
+        className="___wrapper_121fx_1"
       >
         <_default
           id="first-url"
@@ -130,25 +118,22 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           value="https://github.com?a=1"
         >
           <div
-            className="jsx-3489977896"
+            className="___wrapper_16fi1_1"
           >
             <label
-              className="jsx-3489977896"
+              className="___label_16fi1_1"
               htmlFor="first-url"
             >
               First Url
             </label>
             <textarea
-              className="jsx-3489977896"
+              className="___textarea_16fi1_1"
               id="first-url"
               onChange={[Function]}
               placeholder="first.com?alpha=1&beta=2"
               rows={2}
               type="text"
               value="https://github.com?a=1"
-            />
-            <JSXStyle
-              id="3489977896"
             />
           </div>
         </_default>
@@ -160,25 +145,22 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           value="https://github.com?b=1"
         >
           <div
-            className="jsx-3489977896"
+            className="___wrapper_16fi1_1"
           >
             <label
-              className="jsx-3489977896"
+              className="___label_16fi1_1"
               htmlFor="second-url"
             >
               Second Url
             </label>
             <textarea
-              className="jsx-3489977896"
+              className="___textarea_16fi1_1"
               id="second-url"
               onChange={[Function]}
               placeholder="second.com?beta=3&gamma=2"
               rows={2}
               type="text"
               value="https://github.com?b=1"
-            />
-            <JSXStyle
-              id="3489977896"
             />
           </div>
         </_default>
@@ -191,16 +173,16 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           value={null}
         >
           <div
-            className="jsx-3489977896"
+            className="___wrapper_16fi1_1"
           >
             <label
-              className="jsx-3489977896"
+              className="___label_16fi1_1"
               htmlFor="ignore-params"
             >
               Ignore params
             </label>
             <textarea
-              className="jsx-3489977896"
+              className="___textarea_16fi1_1"
               id="ignore-params"
               onChange={[Function]}
               placeholder="beta,zetta"
@@ -208,27 +190,21 @@ exports[`IndexPage should match snapshot with query params 1`] = `
               type="text"
               value=""
             />
-            <JSXStyle
-              id="3489977896"
-            />
           </div>
         </_default>
         <div
-          className="jsx-3318004513 buttonGroup"
+          className="___buttonGroup_ydkmr_1"
         >
           <_default
             onClick={[Function]}
             type="submit"
           >
             <button
-              className="jsx-2390594244"
+              className="___button_1tx2o_1 __type_1tx2o_1 __type_submit_1tx2o_1"
               onClick={[Function]}
               type="submit"
             >
               Compare
-              <JSXStyle
-                id="2390594244"
-              />
             </button>
           </_default>
           <_default
@@ -236,28 +212,22 @@ exports[`IndexPage should match snapshot with query params 1`] = `
             type="reset"
           >
             <button
-              className="jsx-2390594244"
+              className="___button_1tx2o_1 __type_1tx2o_1 __type_reset_1tx2o_1"
               onClick={[Function]}
               type="reset"
             >
               Clean
-              <JSXStyle
-                id="2390594244"
-              />
             </button>
           </_default>
         </div>
-        <JSXStyle
-          id="857942662"
-        />
       </div>
     </_default>
     <_default>
       <div
-        className="jsx-857942662"
+        className="___wrapper_121fx_1"
       >
         <h2
-          className="jsx-3318004513"
+          className="___h2_ydkmr_1"
         >
           Difference
         </h2>
@@ -285,205 +255,171 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           }
         >
           <table
-            className="jsx-828594969"
+            className="___table_1qwty_1"
           >
             <thead
-              className="jsx-828594969"
+              className="___thead_1qwty_1"
             >
               <tr
-                className="jsx-828594969"
+                className="___tr_1qwty_1"
               >
                 <th
-                  className="jsx-828594969"
+                  className="___th_1qwty_1"
                   key="0"
                 >
                   Param
                 </th>
                 <th
-                  className="jsx-828594969"
+                  className="___th_1qwty_1"
                   key="1"
                 >
                   First Url
                 </th>
                 <th
-                  className="jsx-828594969"
+                  className="___th_1qwty_1"
                   key="2"
                 >
                   Second Url
                 </th>
               </tr>
             </thead>
-            <tbody
-              className="jsx-828594969"
-            >
+            <tbody>
               <tr
-                className="jsx-828594969"
+                className="___tr_1qwty_1"
                 key="0"
               >
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="0"
                 >
                   <CopiableText
                     value="a"
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         a
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="1"
                 >
                   <CopiableText
                     value="1"
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         1
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="2"
                 >
                   <CopiableText
                     value={null}
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         -
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
               </tr>
               <tr
-                className="jsx-828594969"
+                className="___tr_1qwty_1"
                 key="1"
               >
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="0"
                 >
                   <CopiableText
                     value="b"
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         b
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="1"
                 >
                   <CopiableText
                     value={null}
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         -
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
                 <td
-                  className="jsx-828594969"
+                  className="___td_1qwty_1"
                   key="2"
                 >
                   <CopiableText
                     value="1"
                   >
                     <button
-                      className="jsx-4209007883"
+                      className="___button_2k399_1"
                       onClick={[Function]}
                     >
                       <span
-                        className="jsx-4209007883 "
+                        className="___text_2k399_1"
                       >
                         1
                       </span>
-                      <JSXStyle
-                        id="4209007883"
-                      />
                     </button>
                   </CopiableText>
                 </td>
               </tr>
             </tbody>
-            <JSXStyle
-              id="828594969"
-            />
           </table>
         </_default>
-        <JSXStyle
-          id="857942662"
-        />
       </div>
     </_default>
-    <GlobalStyles>
-      <JSXStyle
-        id="2843426724"
-      />
-    </GlobalStyles>
-    <JSXStyle
-      id="3318004513"
-    />
   </main>
   <Footer>
     <footer
-      className="jsx-1479092035"
+      className="___footer_1az0p_1"
     >
       <a
-        className="jsx-1479092035"
+        className="___a_1az0p_1"
         href="https://github.com/nataxo/url-query-comparison"
         rel="nofollow noreferrer noopen"
         target="_blank"
@@ -503,9 +439,6 @@ exports[`IndexPage should match snapshot with query params 1`] = `
           </svg>
         </Octocat>
       </a>
-      <JSXStyle
-        id="1479092035"
-      />
     </footer>
   </Footer>
 </IndexPage>

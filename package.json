@@ -9,6 +9,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "reshadow": "0.0.1-alpha.65",
     "url-parse": "^1.4.7"
   },
   "devDependencies": {
