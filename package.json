@@ -1,4 +1,5 @@
 {
+  "name": "url-query-comparison",
   "scripts": {
     "now-build": "next build && next export -o dist",
     "now-dev": "next -p $PORT",
@@ -6,9 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "^9.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "reshadow": "0.0.1-alpha.65",
     "url-parse": "^1.4.7"
   },
@@ -17,5 +18,9 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "jest": "^24.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nataxo/url-query-comparison.git"
   }
 }
