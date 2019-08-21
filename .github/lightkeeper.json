@@ -5,7 +5,7 @@
   "settings": {
     "categories": {
       "performance": 100,
-      "accessibility": 70,
+      "accessibility": 90,
       "best-practices": 100,
       "pwa": 50
     },
@@ -36,7 +36,7 @@
           },
           {
             "resourceType": "total",
-            "budget": 50
+            "budget": 10
           }
         ]
       }
