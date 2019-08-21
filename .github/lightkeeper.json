@@ -4,17 +4,17 @@
   "type": "deployment",
   "settings": {
     "categories": {
-      "performance": 70,
+      "performance": 100,
       "accessibility": 70,
-      "best-practices": 70,
-      "pwa": 70
+      "best-practices": 100,
+      "pwa": 50
     },
     "budgets": [
       {
         "resourceSizes": [
           {
             "resourceType": "script",
-            "budget": 300
+            "budget": 100
           },
           {
             "resourceType": "image",
@@ -26,7 +26,7 @@
           },
           {
             "resourceType": "total",
-            "budget": 1000
+            "budget": 100
           }
         ],
         "resourceCounts": [
