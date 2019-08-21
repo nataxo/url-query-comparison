@@ -1,0 +1,46 @@
+{
+  "baseUrl": "https://url-query-comparison-git-{branch}.nataxo.now.sh/",
+  "ci": "now",
+  "type": "deployment",
+  "settings": {
+    "categories": {
+      "performance": 100,
+      "accessibility": 90,
+      "best-practices": 100,
+      "pwa": 50
+    },
+    "budgets": [
+      {
+        "resourceSizes": [
+          {
+            "resourceType": "script",
+            "budget": 100
+          },
+          {
+            "resourceType": "image",
+            "budget": 100
+          },
+          {
+            "resourceType": "third-party",
+            "budget": 200
+          },
+          {
+            "resourceType": "total",
+            "budget": 100
+          }
+        ],
+        "resourceCounts": [
+          {
+            "resourceType": "third-party",
+            "budget": 50
+          },
+          {
+            "resourceType": "total",
+            "budget": 10
+          }
+        ]
+      }
+    ]
+  },
+  "routes": ["/"]
+}
