@@ -9,6 +9,19 @@ button {
     border: none;
     text-decoration: none;
     user-select: none;
+
+    width: auto;
+
+    overflow: visible;
+
+    cursor: pointer;
+
+    background: transparent;
+
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    -webkit-appearance: none;
 }
 
 text[use|copied] {
@@ -21,7 +34,7 @@ text[use|copied]:after {
     position: absolute;
     left: 0;
     top: 0;
-    color: #0366D6;
+    color: #0366d6;
     visibility: visible;
 
     word-break: normal;

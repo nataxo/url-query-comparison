@@ -8,19 +8,11 @@
 }
 
 ::selection {
-    background-color: #79FFE1;
-}
-
-:active,
-:focus:hover {
-    outline: none;
+    background-color: #79ffe1;
 }
 
 :focus {
-    outline-color: #0366D6;
-    outline-width: 2px;
-    outline-style: solid;
-    outline-offset: 1px;
+    outline-color: #0076ff;
 }
 
 :global(html),

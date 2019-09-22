@@ -14,12 +14,11 @@ wrapper + wrapper {
 
 label {
     display: block;
-
+    font-weight: bold;
 }
 
 label + textarea {
     margin-top: 4px;
-
 }
 
 textarea {
@@ -33,13 +32,13 @@ textarea {
     padding: 8px 8px;
     -webkit-appearance: none;
     -moz-appearance: none;
-    border-color: #E1E1E1;
+    border-color: #e1e1e1;
     transition: border 0.2s ease 0s, color 0.2s ease 0s;
     outline: none;
 }
 
 textarea:focus {
-    border-color: #7D7D7D;
+    border-color: #7d7d7d;
 }
 
 textarea::placeholder {
