@@ -1,27 +1,22 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import { getStyles } from "reshadow";
+import Document, {Html, Head, Main, NextScript} from 'next/document';
 
-const mapStyles = styles =>
-  Object.entries(styles).map(([id, code]) => (
-    <style id={id} dangerouslySetInnerHTML={{ __html: code }} key={id} />
-  ));
+class MyDocument extends Document {
+    static async getInitialProps(ctx) {
+        const initialProps = await Document.getInitialProps(ctx);
+        return {...initialProps};
+    }
 
-export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
-    const page = renderPage();
-    const style = getStyles();
-    return { ...page, style };
-  }
-
-  render() {
-    return (
-      <html lang="en">
-        <Head>{mapStyles(this.props.style.map)}</Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </html>
-    );
-  }
+    render() {
+        return (
+            <Html lang="en">
+                <Head></Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        );
+    }
 }
+
+export default MyDocument;
