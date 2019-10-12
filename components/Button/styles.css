@@ -23,7 +23,7 @@ button {
     cursor: pointer;
     text-decoration: none;
     padding: 8px 25px;
-    transition: all 0.2s ease 0s;
+    transition: top 0.2s ease 0s;
     overflow: hidden;
 }
 
@@ -31,24 +31,24 @@ button:active {
     top: 1px;
 }
 
-button[type="submit"] {
-    background-color: #0076FF;
-    border-color: #0076FF;
-    color: #FAFBFC;
+button[type='submit'] {
+    background-color: #0076ff;
+    border-color: #0076ff;
+    color: #fafbfc;
 }
 
-button[type="submit"]:hover {
-    background-color: #FAFBFC;
-    color: #0076FF;
+button[type='submit']:hover {
+    background-color: #fafbfc;
+    color: #0076ff;
 }
 
-button[type="reset"] {
+button[type='reset'] {
     background-color: #fff;
     border-color: #eaeaea;
     color: #666;
 }
 
-button[type="reset"]:hover {
+button[type='reset']:hover {
     background-color: #fff;
     border: 1px solid #000;
     color: #000;

@@ -1,21 +1,10 @@
-module.exports = {
-    webpack(cfg) {
-        const originalEntry = cfg.entry;
+const withCSS = require('@zeit/next-css');
 
-        cfg.entry = async () => {
-            const entries = await originalEntry();
-
-            return Object.entries(entries).reduce((acc, [key, value]) => {
-                if (key.includes('__tests__')) {
-                    return acc;
-                }
-
-                acc[key] = value;
-                return acc;
-            }, {});
-        };
-
-        return cfg;
+module.exports = withCSS({
+    // next-css
+    cssModules: true,
+    cssLoaderOptions: {
+        importLoaders: 1,
+        localIdentName: '[local]___[hash:base64:5]',
     },
-    exportPathMap: async (defaultPathMap) => defaultPathMap,
-};
+});
