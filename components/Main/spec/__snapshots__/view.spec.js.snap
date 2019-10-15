@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main view renders 1`] = `
+<div>
+  <main
+    className="___main_1sx0t_1"
+  >
+    <h1
+      className="___h1_1sx0t_1"
+    >
+      Compare Urls
+    </h1>
+    <Snippet>
+      <_default />
+    </Snippet>
+    <Snippet>
+      <h2
+        className="___h2_1sx0t_1"
+      >
+        Difference
+      </h2>
+      <_default
+        titles={
+          Array [
+            "Param",
+            "First Url",
+            "Second Url",
+          ]
+        }
+        values={
+          Array [
+            "diff1",
+            "diff2",
+          ]
+        }
+      />
+    </Snippet>
+    <Snippet>
+      <h2
+        className="___h2_1sx0t_1"
+      >
+        Equal
+      </h2>
+      <_default
+        titles={
+          Array [
+            "Param",
+            "Value",
+          ]
+        }
+        values="equal"
+      />
+    </Snippet>
+  </main>
+  <Footer />
+</div>
+`;

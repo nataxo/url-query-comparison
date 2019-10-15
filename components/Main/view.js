@@ -1,4 +1,3 @@
-import {Fragment} from 'react';
 import styled from 'reshadow';
 
 import Snippet from '../Snippet';
@@ -6,7 +5,6 @@ import Form from '../Form';
 import Table from '../Table';
 import Footer from '../Footer';
 
-import global from '../global.css';
 import styles from './styles.css';
 
 const View = ({equal, difference, ...formProps}) => {
