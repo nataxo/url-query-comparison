@@ -1,12 +1,8 @@
 import styled from 'reshadow';
 
 import TextField from '../TextField';
-import Snippet from '../Snippet';
 import Button from '../Button';
-import Table from '../Table';
-import Footer from '../Footer';
 
-import global from '../global.css';
 import styles from './styles.css';
 
 const FIRST_URL_PLACEHOLDER = 'first.com?alpha=1&beta=2';

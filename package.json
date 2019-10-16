@@ -4,14 +4,14 @@
         "now-build": "next build && next export -o dist",
         "now-dev": "next -p $PORT",
         "dev": "next -p 2401",
-        "test": "jest"
+        "test": "BABEL_ENV=test jest"
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
         "next": "^9.0.3",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "reshadow": "0.0.1-alpha.65",
+        "reshadow": "0.0.1-alpha.70",
         "url-parse": "^1.4.7"
     },
     "devDependencies": {

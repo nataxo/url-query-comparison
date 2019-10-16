@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopiableText snapshot 1`] = `
+<button
+  className="___button_40uj5_1"
+  onClick={[Function]}
+>
+  <span
+    className="___text_40uj5_1"
+  >
+    -
+  </span>
+</button>
+`;
