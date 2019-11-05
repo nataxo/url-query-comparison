@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'reshadow';
 
 import TextField from '../TextField';
@@ -9,6 +10,19 @@ const FIRST_URL_PLACEHOLDER = 'first.com?alpha=1&beta=2';
 const SECOND_URL_PLACEHOLDER = 'second.com?beta=3&gamma=2';
 const IGNORE_PLACEHOLDER = 'beta,zetta';
 
+export type Props = {
+  firstUrl: string,
+  onFirstUrlChange: (a: string) => void,
+  secondUrl: string,
+  onSecondUrlChange: (a: string) => void,
+  ignoreParams: any,
+  onIgnoreParamsChange: (a: string) => void,
+  onSubmit: (a: React.SyntheticEvent<HTMLFormElement>) => void,
+  onReset: () => void,
+};
+
+const ButtonGroup = 'div';
+
 export default ({
     firstUrl,
     onFirstUrlChange,
@@ -18,9 +32,9 @@ export default ({
     onIgnoreParamsChange,
     onSubmit,
     onReset,
-}) =>
+}: Props) =>
     styled(styles)(
-        <form>
+      <form onSubmit={onSubmit}>
             <TextField
                 id="first-url"
                 label="First Url"
@@ -44,13 +58,13 @@ export default ({
                 rows={1}
             />
 
-            <buttonGroup>
-                <Button type="submit" onClick={onSubmit}>
+            <ButtonGroup>
+                <Button type="submit">
                     Compare
                 </Button>
                 <Button type="reset" onClick={onReset}>
                     Clean
                 </Button>
-            </buttonGroup>
+            </ButtonGroup>
         </form>,
     );

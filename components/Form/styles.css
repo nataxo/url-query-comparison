@@ -1,10 +1,10 @@
-buttonGroup {
+ButtonGroup {
     display: flex;
     margin-top: 24px;
 }
 
 @media screen and (max-width: 599px) {
-    buttonGroup {
+    ButtonGroup {
         margin-top: 16px;
     }
 }

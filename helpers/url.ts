@@ -1,23 +1,26 @@
 import UrlParser from 'url-parse';
+import {Diff, Eq} from '../types';
 
-export const getQueryParams = (href, ignoreParams = []) => {
+export const getQueryParams = (href: string, ignoreParams: string[] = []) => {
     const url = new UrlParser(href, true);
 
-    return Object.entries(url.query).reduce((acc, [key, value]) => {
-        if (!ignoreParams.includes(key)) {
-            acc[key] = value;
-        }
+    return Object
+        .entries(url.query)
+        .reduce<{[a: string]: string}>((acc, [key, value]) => {
+            if (!ignoreParams.includes(key) && typeof value === 'string') {
+                acc[key] = value;
+            }
 
-        return acc;
-    }, {});
+            return acc;
+        }, {});
 };
 
-export const compareQueryParamsInUrls = (firstHref, secondHref, ignoreParams = []) => {
+export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, ignoreParams: string[] = []) => {
     const firstParams = getQueryParams(firstHref, ignoreParams);
     const secondParams = getQueryParams(secondHref, ignoreParams);
 
-    const diff = [];
-    const eq = [];
+    const diff: Diff[] = [];
+    const eq: Eq[] = [];
 
     Object.entries(firstParams).forEach(([key, value]) => {
         if (secondParams.hasOwnProperty(key)) {

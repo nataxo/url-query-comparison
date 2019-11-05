@@ -2,7 +2,12 @@ import styled from 'reshadow';
 import CopiableText from '../CopiableText';
 import styles from './styles.css';
 
-export default ({titles, values}) => styled(styles)(
+type Props = {
+    titles: string[],
+    values: (string | null)[][],
+};
+
+export default ({titles, values}: Props) => styled(styles)(
     <table>
         <thead>
             <tr>
