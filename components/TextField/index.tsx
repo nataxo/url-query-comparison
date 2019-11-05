@@ -18,7 +18,7 @@ export default ({id, label, value, onChange, placeholder, rows = 2 }: Props) => 
         <label htmlFor={id}>{label}</label>
         <textarea
             id={id}
-            value={value || ''}
+            value={value ?? ''}
             onChange={e => onChange(e.target.value)}
             placeholder={placeholder}
             rows={rows}

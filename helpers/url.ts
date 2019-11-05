@@ -15,7 +15,7 @@ export const getQueryParams = (href: string, ignoreParams: string[] = []) => {
         }, {});
 };
 
-export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, ignoreParams: string[] = []) => {
+export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, ignoreParams: string[]) => {
     const firstParams = getQueryParams(firstHref, ignoreParams);
     const secondParams = getQueryParams(secondHref, ignoreParams);
 

@@ -5,15 +5,11 @@ import {compareQueryParamsInUrls} from '../../helpers/url';
 import {Diff, Eq} from '../../types';
 import View from './view';
 
-const compare = (first: string, second: string, ignore: string) => {
-    const ignoreValue = ignore != undefined ? ignore : '';
-    const ignoreParams = ignoreValue
-        .trim()
-        .replace(' ', '')
-        .split(',');
+const compare = (first: string, second: string, ignore?: string) => {
+    const ignoreParams = ignore?.trim().replace(' ', '').split(',') ?? [];
 
     try {
-        localStorage.setItem('ignoreParams', ignoreValue);
+        localStorage.setItem('ignoreParams', ignore ?? '');
     } catch (e) { }
 
     return compareQueryParamsInUrls(
@@ -33,7 +29,7 @@ const Main = () => {
 
     const changeAppState = ({first = '', second = '', ignore = ''}) => {
         const ignoreParams =
-            ignore || localStorage.getItem('ignoreParams') || '';
+            ignore ?? localStorage.getItem('ignoreParams') ?? '';
         const { diff, eq } = compare(first, second, ignoreParams);
 
         setFirstUrl(first);
