@@ -4,7 +4,8 @@
         "now-build": "next build && next export -o dist",
         "now-dev": "next -p $PORT",
         "dev": "next -p 2401",
-        "test": "BABEL_ENV=test jest"
+        "test": "BABEL_ENV=test jest",
+        "ts": "tsc"
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
@@ -15,11 +16,17 @@
         "url-parse": "^1.4.7"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+        "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+        "@types/node": "^12.12.5",
+        "@types/react": "^16.9.11",
+        "@types/url-parse": "^1.4.3",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
         "enzyme-to-json": "^3.3.5",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^24.8.0"
+        "jest": "^24.8.0",
+        "typescript": "^3.7.2"
     },
     "repository": {
         "type": "git",

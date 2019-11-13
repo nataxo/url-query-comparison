@@ -1,9 +1,15 @@
 import {useState} from 'react';
-import styled from 'reshadow';
+import styled, {use} from 'reshadow';
 
 import styles from './styles.css';
 
-const CopiableText  = ({value}) => {
+const Text = 'span';
+
+type Props = {
+    value: string | null;
+};
+
+const CopiableText  = ({value}: Props) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
@@ -23,7 +29,7 @@ const CopiableText  = ({value}) => {
 
     return styled(styles)(
         <button onClick={handleClick}>
-            <text as="span" use:copied={copied}>{value || '-'}</text>
+            <Text {...use({copied})}>{value || '-'}</Text>
         </button>
     );
 };

@@ -24,11 +24,11 @@ button {
     -webkit-appearance: none;
 }
 
-text[use|copied] {
+Text[use|copied] {
     visibility: hidden;
 }
 
-text[use|copied]:after {
+Text[use|copied]:after {
     content: 'Copied!';
     display: inline-block;
     position: absolute;

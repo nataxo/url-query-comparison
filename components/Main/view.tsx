@@ -1,13 +1,21 @@
 import styled from 'reshadow';
 
 import Snippet from '../Snippet';
-import Form from '../Form';
+import Form, {Props as FormPropsType} from '../Form';
 import Table from '../Table';
 import Footer from '../Footer';
 
+import {Diff, Eq} from '../../types';
+
 import styles from './styles.css';
 
-const View = ({equal, difference, ...formProps}) => {
+const Info = 'div';
+
+type Props = {
+    equal: Eq[],
+    difference: Diff[],
+} & FormPropsType;
+const View = ({equal, difference, ...formProps}: Props) => {
     return styled(styles)(
         <div>
             <main>
@@ -23,7 +31,7 @@ const View = ({equal, difference, ...formProps}) => {
                             values={difference}
                         />
                     ) : (
-                        <info>No differences</info>
+                        <Info>No differences</Info>
                     )}
                 </Snippet>
                 {equal.length > 0 && (
