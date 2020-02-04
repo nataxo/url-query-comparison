@@ -3,10 +3,10 @@
 exports[`main view renders 1`] = `
 <div>
   <main
-    className="___main_1sx0t_1"
+    className="___main_16vyg_1"
   >
     <h1
-      className="___h1_1sx0t_1"
+      className="___h1_16vyg_1"
     >
       Compare Urls
     </h1>
@@ -15,7 +15,7 @@ exports[`main view renders 1`] = `
     </Snippet>
     <Snippet>
       <h2
-        className="___h2_1sx0t_1"
+        className="___h2_16vyg_1"
       >
         Difference
       </h2>
@@ -37,7 +37,7 @@ exports[`main view renders 1`] = `
     </Snippet>
     <Snippet>
       <h2
-        className="___h2_1sx0t_1"
+        className="___h2_16vyg_1"
       >
         Equal
       </h2>

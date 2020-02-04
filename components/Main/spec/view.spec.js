@@ -1,4 +1,4 @@
-import View from '../view.js';
+import View from '../view';
 import {shallow} from 'enzyme';
 
 describe('main view', () => {

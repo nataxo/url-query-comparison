@@ -1,6 +1,6 @@
 import Main from '../';
 import {shallow, mount} from 'enzyme';
-import {RouterContext} from 'next-server/dist/lib/router-context';
+import { RouterContext } from 'next/dist/next-server/lib/router-context';
 
 describe('Main content', () => {
     it('should match snapshot by default', () => {

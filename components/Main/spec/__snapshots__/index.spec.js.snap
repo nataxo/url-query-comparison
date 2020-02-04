@@ -44,16 +44,16 @@ exports[`Main content should match snapshot with query params 1`] = `
   >
     <div>
       <main
-        className="___main_1sx0t_1"
+        className="___main_16vyg_1"
       >
         <h1
-          className="___h1_1sx0t_1"
+          className="___h1_16vyg_1"
         >
           Compare Urls
         </h1>
         <Snippet>
           <div
-            className="___wrapper_121fx_1"
+            className="___div_1tt9o_1"
           >
             <_default
               firstUrl="https://github.com?a=1"
@@ -65,7 +65,9 @@ exports[`Main content should match snapshot with query params 1`] = `
               onSubmit={[Function]}
               secondUrl="https://github.com?b=1"
             >
-              <form>
+              <form
+                onSubmit={[Function]}
+              >
                 <_default
                   id="first-url"
                   label="First Url"
@@ -74,21 +76,20 @@ exports[`Main content should match snapshot with query params 1`] = `
                   value="https://github.com?a=1"
                 >
                   <div
-                    className="___wrapper_13czy_1"
+                    className="___Wrapper_1h3a9_1"
                   >
                     <label
-                      className="___label_13czy_1"
+                      className="___label_1h3a9_1"
                       htmlFor="first-url"
                     >
                       First Url
                     </label>
                     <textarea
-                      className="___textarea_13czy_1"
+                      className="___textarea_1h3a9_1"
                       id="first-url"
                       onChange={[Function]}
                       placeholder="first.com?alpha=1&beta=2"
                       rows={2}
-                      type="text"
                       value="https://github.com?a=1"
                     />
                   </div>
@@ -101,21 +102,20 @@ exports[`Main content should match snapshot with query params 1`] = `
                   value="https://github.com?b=1"
                 >
                   <div
-                    className="___wrapper_13czy_1"
+                    className="___Wrapper_1h3a9_1"
                   >
                     <label
-                      className="___label_13czy_1"
+                      className="___label_1h3a9_1"
                       htmlFor="second-url"
                     >
                       Second Url
                     </label>
                     <textarea
-                      className="___textarea_13czy_1"
+                      className="___textarea_1h3a9_1"
                       id="second-url"
                       onChange={[Function]}
                       placeholder="second.com?beta=3&gamma=2"
                       rows={2}
-                      type="text"
                       value="https://github.com?b=1"
                     />
                   </div>
@@ -129,35 +129,32 @@ exports[`Main content should match snapshot with query params 1`] = `
                   value=""
                 >
                   <div
-                    className="___wrapper_13czy_1"
+                    className="___Wrapper_1h3a9_1"
                   >
                     <label
-                      className="___label_13czy_1"
+                      className="___label_1h3a9_1"
                       htmlFor="ignore-params"
                     >
                       Ignore params
                     </label>
                     <textarea
-                      className="___textarea_13czy_1"
+                      className="___textarea_1h3a9_1"
                       id="ignore-params"
                       onChange={[Function]}
                       placeholder="beta,zetta"
                       rows={1}
-                      type="text"
                       value=""
                     />
                   </div>
                 </_default>
                 <div
-                  className="___buttonGroup_1v48x_1"
+                  className="___ButtonGroup_uilxe_1"
                 >
                   <_default
-                    onClick={[Function]}
                     type="submit"
                   >
                     <button
                       className="___button_3fpq1_1 __type_3fpq1_1 __type_submit_3fpq1_1"
-                      onClick={[Function]}
                       type="submit"
                     >
                       Compare
@@ -182,10 +179,10 @@ exports[`Main content should match snapshot with query params 1`] = `
         </Snippet>
         <Snippet>
           <div
-            className="___wrapper_121fx_1"
+            className="___div_1tt9o_1"
           >
             <h2
-              className="___h2_1sx0t_1"
+              className="___h2_16vyg_1"
             >
               Difference
             </h2>
@@ -254,11 +251,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value="a"
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             a
                           </span>
@@ -273,11 +270,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value="1"
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             1
                           </span>
@@ -292,11 +289,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value={null}
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             -
                           </span>
@@ -316,11 +313,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value="b"
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             b
                           </span>
@@ -335,11 +332,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value={null}
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             -
                           </span>
@@ -354,11 +351,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                         value="1"
                       >
                         <button
-                          className="___button_40uj5_1"
+                          className="___button_6xnkp_1"
                           onClick={[Function]}
                         >
                           <span
-                            className="___text_40uj5_1"
+                            className="___Text_6xnkp_1"
                           >
                             1
                           </span>
