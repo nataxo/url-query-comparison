@@ -2,11 +2,11 @@
 
 exports[`CopiableText snapshot 1`] = `
 <button
-  className="___button_40uj5_1"
+  className="___button_6xnkp_1"
   onClick={[Function]}
 >
   <span
-    className="___text_40uj5_1"
+    className="___Text_6xnkp_1"
   >
     -
   </span>
