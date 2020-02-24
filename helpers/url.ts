@@ -1,18 +1,43 @@
-import UrlParser from 'url-parse';
 import {Diff, Eq} from '../types';
 
-export const getQueryParams = (href: string, ignoreParams: string[] = []) => {
-    const url = new UrlParser(href, true);
+type QueryParamsMap = {
+    [key: string]: {
+        hash: string,
+        values: string[],
+    },
+};
 
-    return Object
-        .entries(url.query)
-        .reduce<{[a: string]: string}>((acc, [key, value]) => {
-            if (!ignoreParams.includes(key) && typeof value === 'string') {
-                acc[key] = value;
-            }
+export const getQueryParams = (href: string, ignoreParams: string[] = []): QueryParamsMap => {
+    if (!href) {
+        return {};
+    }
 
-            return acc;
-        }, {});
+    const search = href.replace(/^.*\?/, '?').replace(/#.*$/, '');
+
+    /** search string is missing */
+    if (search === href || !search) {
+        return {};
+    }
+
+    const searchParams = new URLSearchParams(search);
+
+    ignoreParams.forEach(name => searchParams.delete(name));
+
+    const searchParamsMap: QueryParamsMap = {};
+
+    searchParams.forEach((val, name) => {
+        if (name in searchParamsMap) {
+            searchParamsMap[name].values.push(val);
+        } else {
+            searchParamsMap[name] = {hash: '', values: [val]};
+        }
+    });
+
+    Object.values(searchParamsMap).forEach(entry => {
+        entry.values.sort();
+        entry.hash = entry.values.join('_@_')
+    });
+    return searchParamsMap;
 };
 
 export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, ignoreParams: string[]) => {
@@ -22,23 +47,23 @@ export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, 
     const diff: Diff[] = [];
     const eq: Eq[] = [];
 
-    Object.entries(firstParams).forEach(([key, value]) => {
-        if (secondParams.hasOwnProperty(key)) {
-            if (secondParams[key] === firstParams[key]) {
-                eq.push([key, value]);
+    Object.entries(firstParams).forEach(([key, {values, hash}]) => {
+        if (Object.prototype.hasOwnProperty.call(secondParams, key)) {
+            if (hash === secondParams[key].hash) {
+                eq.push([key, values]);
             } else {
-                diff.push([key, value, secondParams[key]]);
+                diff.push([key, values, secondParams[key].values]);
             }
 
             delete secondParams[key];
         } else {
-            diff.push([key, value, null]);
+            diff.push([key, values, null]);
         }
     });
 
-    Object.entries(secondParams).forEach(([key, value]) => {
-        diff.push([key, null, value]);
+    Object.entries(secondParams).forEach(([key, {values}]) => {
+        diff.push([key, null, values]);
     });
 
-    return {diff, eq};
+    return { diff, eq };
 };

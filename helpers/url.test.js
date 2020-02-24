@@ -3,12 +3,19 @@ import {compareQueryParamsInUrls, getQueryParams} from './url';
 describe('getQueryParams', () => {
     describe('if url has a protocol', () => {
         it('should return an object with query params', () => {
-            expect(getQueryParams('https://github.com?a=1')).toStrictEqual({a: '1'});
+            const expected = getQueryParams('https://github.com?a=1&a=9&a=1');
+            const actual = {
+                a: {
+                    hash: '1_@_1_@_9',
+                    values: ['1', '1', '9'],
+                },
+            };
+            expect(expected).toStrictEqual(actual);
         });
     });
     describe('if url has not a protocol', () => {
         it('should return an object with query params', () => {
-            expect(getQueryParams('//github.com?a=1')).toStrictEqual({a: '1'});
+            expect(getQueryParams('//github.com?a=1')).toStrictEqual({ a: { hash: '1', values: ['1'] }});
         });
     });
     describe('if url has not query params', () => {
@@ -29,7 +36,7 @@ describe('compareQueryParamsInUrls', () => {
             const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?a=1');
             const actual = {
                 diff: [],
-                eq: [['a', '1']],
+                eq: [['a', ['1']]],
             };
 
             expect(expected).toStrictEqual(actual);
@@ -53,7 +60,7 @@ describe('compareQueryParamsInUrls', () => {
             const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?a=2');
             const actual = {
                 diff: [
-                    ['a', '1', '2'],
+                    ['a', ['1'], ['2']],
                 ],
                 eq: [],
             };
@@ -67,8 +74,8 @@ describe('compareQueryParamsInUrls', () => {
             const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?b=1');
             const actual = {
                 diff: [
-                    ['a', '1', null],
-                    ['b', null, '1'],
+                    ['a', ['1'], null],
+                    ['b', null, ['1']],
                 ],
                 eq: [],
             };
@@ -77,12 +84,12 @@ describe('compareQueryParamsInUrls', () => {
         });
     });
 
-    describe('if the function gets different urls and all params in ignoreParams', () => {
+    describe('if the function gets different urls and all params are in ignoreParams', () => {
         it('should return an empty diff array', () => {
             const expected = compareQueryParamsInUrls(
                 'https://github.com?a=1',
                 'https://github.com?b=1',
-                ['a', 'b']
+                ['a', 'b'],
             );
             const actual = {
                 diff: [],
