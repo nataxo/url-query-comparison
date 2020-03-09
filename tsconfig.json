@@ -12,6 +12,7 @@
         "noFallthroughCasesInSwitch": true,
         "noUnusedLocals": true,
         "noUnusedParameters": false,
+        "suppressImplicitAnyIndexErrors": true,
         "strict": true,
         "target": "esnext",
         "typeRoots": ["./src/types", "./node_modules/@types"],

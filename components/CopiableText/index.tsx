@@ -6,14 +6,14 @@ import styles from './styles.css';
 const Text = 'span';
 
 type Props = {
-    value: string | null;
+    value: string | null | undefined;
 };
 
 const CopiableText  = ({value}: Props) => {
     const [copied, setCopied] = useState(false);
 
     const handleClick = () => {
-        if (value === null || value === undefined) {
+        if (value == null) {
             return;
         }
 

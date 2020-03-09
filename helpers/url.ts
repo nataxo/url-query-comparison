@@ -1,5 +1,7 @@
 import {Diff, Eq} from '../types';
 
+type ComparisonResult = {diff: Diff[], eq: Eq[]};
+
 type QueryParamsMap = {
     [key: string]: {
         hash: string,
@@ -7,21 +9,16 @@ type QueryParamsMap = {
     },
 };
 
-export const getQueryParams = (href: string, ignoreParams: string[] = []): QueryParamsMap => {
-    if (!href) {
-        return {};
-    }
+type UrlParams = {
+    origin: string,
+    pathname: string,
+    searchParams: URLSearchParams,
+};
 
-    const search = href.replace(/^.*\?/, '?').replace(/#.*$/, '');
+type NonQueryUrlParams = Omit<UrlParams, 'searchParams'>;
 
-    /** search string is missing */
-    if (search === href || !search) {
-        return {};
-    }
-
-    const searchParams = new URLSearchParams(search);
-
-    ignoreParams.forEach(name => searchParams.delete(name));
+export const getQueryParamsMap = (urlSearchParams: URLSearchParams): QueryParamsMap => {
+    const searchParams = new URLSearchParams(urlSearchParams);
 
     const searchParamsMap: QueryParamsMap = {};
 
@@ -40,30 +37,107 @@ export const getQueryParams = (href: string, ignoreParams: string[] = []): Query
     return searchParamsMap;
 };
 
-export const compareQueryParamsInUrls = (firstHref: string, secondHref: string, ignoreParams: string[]) => {
-    const firstParams = getQueryParams(firstHref, ignoreParams);
-    const secondParams = getQueryParams(secondHref, ignoreParams);
+export const parseUrl = (
+    href: string,
+    ignoreParams: string[] = []
+): UrlParams => {
+    let url: Partial<UrlParams>;
 
+    try {
+        url = new URL(href);
+    } catch (err) {
+        const origin = href.replace(/\?.*$/, '');
+        const search = href.replace(origin, '').replace(/#.*$/, '') || '';
+
+        url = {origin, pathname: '', searchParams: new URLSearchParams(search)};
+    }
+
+    const {
+        origin = '',
+        pathname = '',
+        searchParams = new URLSearchParams(),
+    } = url;
+
+    ignoreParams.forEach(name => searchParams.delete(name));
+
+    return {origin, pathname, searchParams};
+
+};
+
+export const compareQueryParams = (
+    firstParams: QueryParamsMap,
+    secondParams: QueryParamsMap
+): ComparisonResult => {
     const diff: Diff[] = [];
     const eq: Eq[] = [];
-
+    // compare query params
     Object.entries(firstParams).forEach(([key, {values, hash}]) => {
         if (Object.prototype.hasOwnProperty.call(secondParams, key)) {
-            if (hash === secondParams[key].hash) {
-                eq.push([key, values]);
+            const secondParam = secondParams[key];
+            if (!secondParam || secondParam.hash !== hash ) {
+                diff.push([key, values, secondParam.values]);
             } else {
-                diff.push([key, values, secondParams[key].values]);
+                eq.push([key, values]);
             }
 
-            delete secondParams[key];
+            if (secondParam) {
+                delete secondParams[key];
+            }
         } else {
             diff.push([key, values, null]);
         }
     });
 
+    // push unequal query params from second url
     Object.entries(secondParams).forEach(([key, {values}]) => {
         diff.push([key, null, values]);
     });
 
     return { diff, eq };
+};
+
+export const compareNonQueryUrlParams = (
+    firsUrl: NonQueryUrlParams,
+    secondUrl: NonQueryUrlParams
+): ComparisonResult => {
+    const diff: Diff[] = [];
+    const eq: Eq[] = [];
+    // compare rest url params
+    Object.entries(firsUrl).forEach(([key, value]) => {
+        const secondValue = secondUrl[key];
+
+        if (value === '' && secondValue === '') {
+            return;
+        }
+
+        if (value === secondValue) {
+            eq.push([`Url ${key}`, [value]]);
+            return;
+        }
+
+        diff.push([`Url ${key}`, [value], [secondValue]]);
+    });
+    return { diff, eq };
+};
+    
+
+export const compareUrls = (firstHref: string, secondHref: string = '', ignoreParams: string[] = []): ComparisonResult => {
+    const { searchParams: firstSearchParams, ...firsUrl } = parseUrl(firstHref, ignoreParams);
+    const { searchParams: secondSearchParams, ...secondUrl } = parseUrl(secondHref, ignoreParams);
+    const firstParams = firstSearchParams ? getQueryParamsMap(firstSearchParams) : {};
+    const secondParams = secondSearchParams ? getQueryParamsMap(secondSearchParams) : {};
+
+    const { eq: nonQueryEq, diff: nonQueryDiff } = compareNonQueryUrlParams(firsUrl, secondUrl);
+    const { eq: queryEq, diff: queryDiff } = compareQueryParams(firstParams, secondParams);
+
+    return {
+        eq: [
+            ...nonQueryEq,
+            ...queryEq,
+        ],
+        diff: [
+            ...nonQueryDiff,
+            ...queryDiff,
+        ],
+    };
 };

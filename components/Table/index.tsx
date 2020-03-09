@@ -3,7 +3,7 @@ import CopiableText from '../CopiableText';
 import styles from './styles.css';
 
 type ParamName = string;
-type ParamValues = string[] | null;
+type ParamValues = string[] | null | undefined;
 type Values = [ParamName, ParamValues] | [ParamName, ParamValues, ParamValues];
 
 type Props = {

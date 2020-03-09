@@ -1,2 +1,2 @@
-export type Diff = [string, string[] | null, string[] | null];
-export type Eq = [string, string[]];
+export type Diff = [string, string[] | null | undefined, string[] | null | undefined];
+export type Eq = [string, string[] | null];
