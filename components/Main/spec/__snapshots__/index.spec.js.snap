@@ -22,17 +22,36 @@ exports[`Main content should match snapshot with query params 1`] = `
       Array [
         Array [
           "a",
-          "1",
+          Array [
+            "1",
+          ],
           null,
         ],
         Array [
           "b",
           null,
-          "1",
+          Array [
+            "1",
+          ],
         ],
       ]
     }
-    equal={Array []}
+    equal={
+      Array [
+        Array [
+          "Url origin",
+          Array [
+            "https://github.com",
+          ],
+        ],
+        Array [
+          "Url pathname",
+          Array [
+            "/",
+          ],
+        ],
+      ]
+    }
     firstUrl="https://github.com?a=1"
     ignoreParams=""
     onFirstUrlChange={[Function]}
@@ -198,40 +217,44 @@ exports[`Main content should match snapshot with query params 1`] = `
                 Array [
                   Array [
                     "a",
-                    "1",
+                    Array [
+                      "1",
+                    ],
                     null,
                   ],
                   Array [
                     "b",
                     null,
-                    "1",
+                    Array [
+                      "1",
+                    ],
                   ],
                 ]
               }
             >
               <table
-                className="___table_1qwty_1"
+                className="___table_3b5i1_1"
               >
                 <thead
-                  className="___thead_1qwty_1"
+                  className="___thead_3b5i1_1"
                 >
                   <tr
-                    className="___tr_1qwty_1"
+                    className="___tr_3b5i1_1"
                   >
                     <th
-                      className="___th_1qwty_1"
+                      className="___th_3b5i1_1"
                       key="0"
                     >
                       Param
                     </th>
                     <th
-                      className="___th_1qwty_1"
+                      className="___th_3b5i1_1"
                       key="1"
                     >
                       First Url
                     </th>
                     <th
-                      className="___th_1qwty_1"
+                      className="___th_3b5i1_1"
                       key="2"
                     >
                       Second Url
@@ -240,11 +263,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                 </thead>
                 <tbody>
                   <tr
-                    className="___tr_1qwty_1"
+                    className="___tr_3b5i1_1"
                     key="0"
                   >
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="0"
                     >
                       <CopiableText
@@ -263,26 +286,31 @@ exports[`Main content should match snapshot with query params 1`] = `
                       </CopiableText>
                     </td>
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="1"
                     >
-                      <CopiableText
-                        value="1"
+                      <div
+                        className="___SubRow_3b5i1_1"
+                        key="0"
                       >
-                        <button
-                          className="___button_6xnkp_1"
-                          onClick={[Function]}
+                        <CopiableText
+                          value="1"
                         >
-                          <span
-                            className="___Text_6xnkp_1"
+                          <button
+                            className="___button_6xnkp_1"
+                            onClick={[Function]}
                           >
-                            1
-                          </span>
-                        </button>
-                      </CopiableText>
+                            <span
+                              className="___Text_6xnkp_1"
+                            >
+                              1
+                            </span>
+                          </button>
+                        </CopiableText>
+                      </div>
                     </td>
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="2"
                     >
                       <CopiableText
@@ -302,11 +330,11 @@ exports[`Main content should match snapshot with query params 1`] = `
                     </td>
                   </tr>
                   <tr
-                    className="___tr_1qwty_1"
+                    className="___tr_3b5i1_1"
                     key="1"
                   >
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="0"
                     >
                       <CopiableText
@@ -325,7 +353,7 @@ exports[`Main content should match snapshot with query params 1`] = `
                       </CopiableText>
                     </td>
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="1"
                     >
                       <CopiableText
@@ -344,11 +372,102 @@ exports[`Main content should match snapshot with query params 1`] = `
                       </CopiableText>
                     </td>
                     <td
-                      className="___td_1qwty_1"
+                      className="___td_3b5i1_1"
                       key="2"
                     >
+                      <div
+                        className="___SubRow_3b5i1_1"
+                        key="0"
+                      >
+                        <CopiableText
+                          value="1"
+                        >
+                          <button
+                            className="___button_6xnkp_1"
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="___Text_6xnkp_1"
+                            >
+                              1
+                            </span>
+                          </button>
+                        </CopiableText>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </_default>
+          </div>
+        </Snippet>
+        <Snippet>
+          <div
+            className="___div_1tt9o_1"
+          >
+            <h2
+              className="___h2_16vyg_1"
+            >
+              Equal
+            </h2>
+            <_default
+              titles={
+                Array [
+                  "Param",
+                  "Value",
+                ]
+              }
+              values={
+                Array [
+                  Array [
+                    "Url origin",
+                    Array [
+                      "https://github.com",
+                    ],
+                  ],
+                  Array [
+                    "Url pathname",
+                    Array [
+                      "/",
+                    ],
+                  ],
+                ]
+              }
+            >
+              <table
+                className="___table_3b5i1_1"
+              >
+                <thead
+                  className="___thead_3b5i1_1"
+                >
+                  <tr
+                    className="___tr_3b5i1_1"
+                  >
+                    <th
+                      className="___th_3b5i1_1"
+                      key="0"
+                    >
+                      Param
+                    </th>
+                    <th
+                      className="___th_3b5i1_1"
+                      key="1"
+                    >
+                      Value
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    className="___tr_3b5i1_1"
+                    key="0"
+                  >
+                    <td
+                      className="___td_3b5i1_1"
+                      key="0"
+                    >
                       <CopiableText
-                        value="1"
+                        value="Url origin"
                       >
                         <button
                           className="___button_6xnkp_1"
@@ -357,10 +476,82 @@ exports[`Main content should match snapshot with query params 1`] = `
                           <span
                             className="___Text_6xnkp_1"
                           >
-                            1
+                            Url origin
                           </span>
                         </button>
                       </CopiableText>
+                    </td>
+                    <td
+                      className="___td_3b5i1_1"
+                      key="1"
+                    >
+                      <div
+                        className="___SubRow_3b5i1_1"
+                        key="0"
+                      >
+                        <CopiableText
+                          value="https://github.com"
+                        >
+                          <button
+                            className="___button_6xnkp_1"
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="___Text_6xnkp_1"
+                            >
+                              https://github.com
+                            </span>
+                          </button>
+                        </CopiableText>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    className="___tr_3b5i1_1"
+                    key="1"
+                  >
+                    <td
+                      className="___td_3b5i1_1"
+                      key="0"
+                    >
+                      <CopiableText
+                        value="Url pathname"
+                      >
+                        <button
+                          className="___button_6xnkp_1"
+                          onClick={[Function]}
+                        >
+                          <span
+                            className="___Text_6xnkp_1"
+                          >
+                            Url pathname
+                          </span>
+                        </button>
+                      </CopiableText>
+                    </td>
+                    <td
+                      className="___td_3b5i1_1"
+                      key="1"
+                    >
+                      <div
+                        className="___SubRow_3b5i1_1"
+                        key="0"
+                      >
+                        <CopiableText
+                          value="/"
+                        >
+                          <button
+                            className="___button_6xnkp_1"
+                            onClick={[Function]}
+                          >
+                            <span
+                              className="___Text_6xnkp_1"
+                            >
+                              /
+                            </span>
+                          </button>
+                        </CopiableText>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

@@ -1,95 +1,181 @@
-import {compareQueryParamsInUrls, getQueryParams} from './url';
+import { compareQueryParams, parseUrl, getQueryParamsMap, compareUrls} from './url';
 
-describe('getQueryParams', () => {
-    describe('if url has a protocol', () => {
-        it('should return an object with query params', () => {
-            expect(getQueryParams('https://github.com?a=1')).toStrictEqual({a: '1'});
+describe('getQueryParamsMap', () => {
+    it('should return a query params map', () => {
+        const expected = getQueryParamsMap(new URLSearchParams('?a=1&a=9&a=1'));
+        const actual = {
+            a: {
+                hash: '1_@_1_@_9',
+                values: ['1', '1', '9'],
+            },
+        };
+        expect(expected).toStrictEqual(actual);
+    });
+});
+
+describe('compareQueryParams', () => {
+    describe('if passed equal query params maps', () => {
+        it('should return eq array and empty diff array', () => {
+            const firsQueryMap = {
+                a: {
+                    hash: '1',
+                    values: ['1'],
+                },
+            };
+
+            const secondQueryMap = {
+                a: {
+                    hash: '1',
+                    values: ['1'],
+                },
+            };
+            const expected = compareQueryParams(firsQueryMap, secondQueryMap);
+            const actual = {
+                diff: [],
+                eq: [['a', ['1']]],
+            };
+
+            expect(expected).toStrictEqual(actual);
         });
     });
-    describe('if url has not a protocol', () => {
-        it('should return an object with query params', () => {
-            expect(getQueryParams('//github.com?a=1')).toStrictEqual({a: '1'});
+
+    describe('if passed maps with equal keys, but unequal values', () => {
+        it('should return diff array', () => {
+            const firsQueryMap = {
+                a: {
+                    hash: '1_@_2',
+                    values: ['1', '2'],
+                },
+            };
+
+            const secondQueryMap = {
+                a: {
+                    hash: '2',
+                    values: ['2'],
+                },
+            };
+            const expected = compareQueryParams(firsQueryMap, secondQueryMap);
+            const actual = {
+                diff: [
+                    ['a', ['1', '2'], ['2']],
+                ],
+                eq: [],
+            };
+
+            expect(expected).toStrictEqual(actual);
         });
     });
-    describe('if url has not query params', () => {
-        it('should return an empty object', () => {
-            expect(getQueryParams('https://github.com')).toStrictEqual({});
-        });
-    });
-    describe('if the function gets array with ignore parameters', () => {
-        it('should return an object without them', () => {
-            expect(getQueryParams('https://github.com?a=1', ['a'])).toStrictEqual({});
+
+    describe('if passed maps with different keys and values', () => {
+        it('should return diff array', () => {
+            const firsQueryMap = {
+                a: {
+                    hash: '1',
+                    values: ['1'],
+                },
+            };
+
+            const secondQueryMap = {
+                b: {
+                    hash: '1',
+                    values: ['1'],
+                },
+            };
+            const expected = compareQueryParams(firsQueryMap, secondQueryMap);
+            const actual = {
+                diff: [
+                    ['a', ['1'], null],
+                    ['b', null, ['1']],
+                ],
+                eq: [],
+            };
+
+            expect(expected).toStrictEqual(actual);
         });
     });
 });
 
-describe('compareQueryParamsInUrls', () => {
-    describe('if the function gets equal urls', () => {
-        it('should return empty diff and one element in eq', () => {
-            const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?a=1');
-            const actual = {
-                diff: [],
-                eq: [['a', '1']],
-            };
-
-            expect(expected).toStrictEqual(actual);
+describe('parseUrl', () => {
+    it('should parse url without protocol', () => {
+        expect(parseUrl('//github.com?a=1')).toEqual({
+            origin: '//github.com',
+            pathname: '',
+            searchParams: new URLSearchParams('?a=1'),
         });
     });
 
-    describe('if the function gets equal urls and all params from urls in ignoreParams', () => {
-        it('should return empty arrays', () => {
-            const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?a=1', ['a']);
-            const actual = {
-                diff: [],
-                eq: [],
-            };
-
-            expect(expected).toStrictEqual(actual);
+    it('should parse url without query params', () => {
+        expect(parseUrl('https://github.com/path')).toStrictEqual({
+            origin: 'https://github.com',
+            pathname: '/path',
+            searchParams: new URLSearchParams(),
         });
     });
 
-    describe('if the function gets different urls and key params are equal', () => {
-        it('should return diff array with different values', () => {
-            const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?a=2');
-            const actual = {
-                diff: [
-                    ['a', '1', '2'],
-                ],
-                eq: [],
-            };
-
-            expect(expected).toStrictEqual(actual);
+    it('should return empty URL if passed empty string', () => {
+        expect(parseUrl('')).toStrictEqual({
+            origin: '',
+            pathname: '',
+            searchParams: new URLSearchParams(),
         });
     });
 
-    describe('if the function gets different urls and key params are not equal', () => {
-        it('should return diff array with different keys and values', () => {
-            const expected = compareQueryParamsInUrls('https://github.com?a=1', 'https://github.com?b=1');
-            const actual = {
-                diff: [
-                    ['a', '1', null],
-                    ['b', null, '1'],
-                ],
-                eq: [],
-            };
+    it('should exclude passed ignore params from the output searchParams', () => {
+        const expected = parseUrl('https://github.com?a=1', ['a']);
+        expect(expected).toStrictEqual(
+            expect.objectContaining({
+                searchParams: new URLSearchParams(),
+            }));
+    });
+});
 
-            expect(expected).toStrictEqual(actual);
-        });
+describe('compareUrls', () => {
+    it('should compare url origins', () => {
+        const expected = compareUrls('https://github.com?a=1', 'http://github.com?a=1');
+        const actual = {
+            diff: [
+                ['Url origin', ['https://github.com'], ['http://github.com']],
+            ],
+            eq: [
+                ['Url pathname', ['/']],
+                ['a', ['1']],
+            ],
+        };
+
+        expect(expected).toStrictEqual(expect.objectContaining(actual));
     });
 
-    describe('if the function gets different urls and all params in ignoreParams', () => {
-        it('should return an empty diff array', () => {
-            const expected = compareQueryParamsInUrls(
-                'https://github.com?a=1',
-                'https://github.com?b=1',
-                ['a', 'b']
-            );
-            const actual = {
-                diff: [],
-                eq: [],
-            };
+    it('should return diff array for unequal multi parameter', () => {
+        const expected = compareUrls('https://github.com?a=1&a=2', 'http://github.com?a=1&a=3')
 
-            expect(expected).toStrictEqual(actual);
-        });
+        expect(expected).toEqual(expect.objectContaining({
+            diff: expect.arrayContaining([
+                ['a', ['1', '2'], ['1', '3']],
+            ]),
+        }));
+    });
+
+    it('should return eq array for equal multi parameter', () => {
+        const expected = compareUrls('https://github.com?a=1&a=2', 'http://github.com?a=1&a=2');
+
+        expect(expected).toEqual(expect.objectContaining({
+            eq: expect.arrayContaining([
+                ['a', ['1', '2']],
+            ]),
+        }));
+    });
+
+    it('should return comparison result for single url', () => {
+        const expected = compareUrls('https://github.com?a=1', '');
+        const actual = {
+            diff: [
+                ['Url origin', ['https://github.com'], ['']],
+                ['Url pathname', ['/'], ['']],
+                ['a', ['1'], null],
+            ],
+            eq: [],
+        };
+
+        expect(expected).toStrictEqual(actual);
     });
 });

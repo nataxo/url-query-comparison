@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useRouter} from 'next/router';
-import UrlParser from 'url-parse';
-import {compareQueryParamsInUrls} from '../../helpers/url';
+import {compareUrls, parseUrl} from '../../helpers/url';
 import {Diff, Eq} from '../../types';
 import View from './view';
 
@@ -12,7 +11,7 @@ const compare = (first: string, second: string, ignore?: string) => {
         localStorage.setItem('ignoreParams', ignore ?? '');
     } catch (e) { }
 
-    return compareQueryParamsInUrls(
+    return compareUrls(
         first.trim(),
         second.trim(),
         ignoreParams,
@@ -44,8 +43,12 @@ const Main = () => {
         changeAppState(router.query);
 
         const handleRouteChange = (url: string) => {
-            const {query} = new UrlParser(url, true);
-            changeAppState(query);
+            const {searchParams} = parseUrl(url);
+            changeAppState({
+                first: searchParams.get('first') || '',
+                second: searchParams.get('second') || '',
+                ignore: searchParams.get('ignore') || '',
+            });
         };
 
         router.events && router.events.on('routeChangeComplete', handleRouteChange);
