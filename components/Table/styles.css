@@ -18,7 +18,7 @@ th {
 thead tr th:nth-child(1) {
     border-radius: 4px 0 0 4px;
     border-left: 1px solid #eaeaea;
-    width: 20%;
+    min-width: 150px;
 }
 
 thead tr th:last-child {
