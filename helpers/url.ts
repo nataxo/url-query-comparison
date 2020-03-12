@@ -111,11 +111,11 @@ export const compareNonQueryUrlParams = (
         }
 
         if (value === secondValue) {
-            eq.push([`Url ${key}`, [value]]);
+            eq.push([`url ${key}`, [value]]);
             return;
         }
 
-        diff.push([`Url ${key}`, [value], [secondValue]]);
+        diff.push([`url ${key}`, [value], [secondValue]]);
     });
     return { diff, eq };
 };

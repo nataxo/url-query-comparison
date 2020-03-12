@@ -134,10 +134,10 @@ describe('compareUrls', () => {
         const expected = compareUrls('https://github.com?a=1', 'http://github.com?a=1');
         const actual = {
             diff: [
-                ['Url origin', ['https://github.com'], ['http://github.com']],
+                ['url origin', ['https://github.com'], ['http://github.com']],
             ],
             eq: [
-                ['Url pathname', ['/']],
+                ['url pathname', ['/']],
                 ['a', ['1']],
             ],
         };
@@ -169,8 +169,8 @@ describe('compareUrls', () => {
         const expected = compareUrls('https://github.com?a=1', '');
         const actual = {
             diff: [
-                ['Url origin', ['https://github.com'], ['']],
-                ['Url pathname', ['/'], ['']],
+                ['url origin', ['https://github.com'], ['']],
+                ['url pathname', ['/'], ['']],
                 ['a', ['1'], null],
             ],
             eq: [],

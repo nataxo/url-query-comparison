@@ -9,8 +9,6 @@ div {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.12);
     border-radius: 5px;
 
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
     overflow: hidden;
 }
 
