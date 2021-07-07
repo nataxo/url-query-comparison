@@ -38,7 +38,7 @@ textarea {
 }
 
 textarea:focus {
-    border-color: #7d7d7d;
+    border-color: #333;
 }
 
 textarea::placeholder {

@@ -8,6 +8,7 @@ button {
     vertical-align: middle;
     text-transform: uppercase;
     text-align: center;
+    letter-spacing: 0.6px;
     white-space: nowrap;
     min-width: 100px;
 
@@ -15,8 +16,8 @@ button {
     border-width: 1px;
     border-style: solid;
 
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 13px;
     flex-shrink: 0;
 
     user-select: none;

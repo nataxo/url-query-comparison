@@ -41,6 +41,7 @@ export default ({
                 value={firstUrl}
                 onChange={onFirstUrlChange}
                 placeholder={FIRST_URL_PLACEHOLDER}
+                autofocus={true}
             />
             <TextField
                 id="second-url"
