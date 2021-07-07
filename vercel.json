@@ -1,5 +1,6 @@
 {
-  "version":2,"name":"url-query-comparison",
-  "builds":[{"src":"package.json","use":"@vercel/static-build"}],
+  "version":2,
+  "name":"url-query-comparison",
+  "builds":[{"src":"package.json","use":"@vercel/next"}, {"src":"package.json","use":"@now/next"}],
   "alias": ["compare-urls.now.sh", "compare-urls.vercel.app"]
 }
