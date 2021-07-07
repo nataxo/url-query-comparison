@@ -1,8 +1,8 @@
 {
     "name": "url-query-comparison",
     "scripts": {
-        "now-build": "next build && next export -o dist",
-        "now-dev": "next -p $PORT",
+        "vercel-build": "next build && next export -o dist",
+        "vercel-dev": "next -p $PORT",
         "dev": "next -p 2401",
         "test": "BABEL_ENV=test jest",
         "ts": "tsc"

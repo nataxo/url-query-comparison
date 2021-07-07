@@ -19,3 +19,5 @@ build/Release
 
 **/.DS_Store
 coverage
+
+.vercel
