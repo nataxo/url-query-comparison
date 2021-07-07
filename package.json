@@ -1,5 +1,7 @@
 {
     "name": "url-query-comparison",
+    "author": "nataxo",
+    "license": "MIT",
     "scripts": {
         "vercel-build": "next build && next export -o dist",
         "vercel-dev": "next -p $PORT",

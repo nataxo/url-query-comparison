@@ -1,6 +1,6 @@
 {
-  "baseUrl": "https://url-query-comparison-git-{branch}.nataxo.now.sh/",
-  "ci": "now",
+  "baseUrl": "https://url-query-comparison-git-{branch}-nataxo.vercel.app/",
+  "ci": "vercel",
   "type": "deployment",
   "settings": {
     "categories": {
