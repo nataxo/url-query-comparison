@@ -1,6 +1,6 @@
 # Url Query Comparison
 
-https://compare-urls.now.sh
+https://compare-urls.vercel.app
 
 Aloha! My simple tool helps you to compare query parameters from large urls.
 
