@@ -1,5 +1,4 @@
-import styled from 'reshadow';
-import styles from './styles.css';
+import styles from './styles.module.css';
 
 type Props = {
     type: 'reset' | 'button' | 'submit' | 'reset';
@@ -7,8 +6,8 @@ type Props = {
     children: React.ReactNode;
 };
 
-export default ({type, onClick, children}: Props) => styled(styles)(
-    <button type={type} onClick={onClick}>
+export default ({type, onClick, children}: Props) => (
+    <button type={type} onClick={onClick} className={styles.button}>
         {children}
     </button>
 );

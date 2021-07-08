@@ -10,11 +10,12 @@
         "ts": "tsc"
     },
     "dependencies": {
-        "@zeit/next-css": "^1.0.1",
+        "classnames": "^2.3.1",
         "next": "^11.0.1",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
-        "reshadow": "0.0.1-alpha.70"
+        "update": "^0.7.4",
+        "webpack": "^5.44.0"
     },
     "devDependencies": {
         "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
@@ -26,7 +27,8 @@
         "enzyme-to-json": "^3.6.2",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^25.5.4",
-        "typescript": "^3.9.10"
+        "typescript": "^4.3.5",
+        "webpack": "5.44.0"
     },
     "repository": {
         "type": "git",

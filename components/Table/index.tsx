@@ -1,6 +1,5 @@
-import styled from 'reshadow';
 import CopiableText from '../CopiableText';
-import styles from './styles.css';
+import styles from './styles.module.css';
 
 type ParamName = string;
 type ParamValues = string[] | null | undefined;
@@ -11,24 +10,22 @@ type Props = {
     values: Values[],
 };
 
-const SubRow = 'div';
-
-export default ({titles, values}: Props) => styled(styles)(
-    <table>
-        <thead>
-            <tr>
-                {titles.map((title, index) => <th key={index}>{title}</th>)}
+export default ({titles, values}: Props) => (
+    <table className={styles.table}>
+        <thead className={styles.thead}>
+            <tr className={styles.tr}>
+                {titles.map((title, index) => <th key={index} className={styles.th}>{title}</th>)}
             </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tbody}>
         {values.map((row, rowIndex) =>
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className={styles.tr}>
                 {row.map((col, colIndex) =>
-                    <td key={colIndex}>
+                    <td key={colIndex} className={styles.td}>
                         {Array.isArray(col) && col.map((val, index) =>
-                            <SubRow key={index}>
+                            <div className={styles.subRow} key={index}>
                                 <CopiableText value={val}/>
-                            </SubRow>
+                            </div>
                         )}
                         {!Array.isArray(col) && <CopiableText value={col} />}
                     </td>

@@ -1,13 +1,13 @@
 import Octocat from '../Icons/Octocat';
-import styled from 'reshadow';
-import styles from './styles.css';
+import styles from './styles.module.css';
 
-const Footer = () => styled(styles)(
-    <footer>
+const Footer = () => (
+    <footer className={styles.footer}>
         <a
             href="https://github.com/nataxo/url-query-comparison"
             target="_blank"
             rel="nofollow noreferrer noopen"
+            className={styles.a}
             title="Github: nataxo/url-query-comparison"
         >
             <Octocat />

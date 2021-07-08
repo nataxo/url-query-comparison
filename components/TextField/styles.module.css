@@ -1,27 +1,27 @@
-Wrapper {
+.wrapper {
     overflow: hidden;
 }
 
-Wrapper + Wrapper {
+.wrapper + .wrapper {
     margin-top: 16px;
 }
 
 @media screen and (max-width: 599px) {
-    Wrapper + Wrapper {
+    .wrapper + .wrapper {
         margin-top: 12px;
     }
 }
 
-label {
+.label {
     display: block;
     font-weight: bold;
 }
 
-label + textarea {
+.label + .textarea {
     margin-top: 4px;
 }
 
-textarea {
+.textarea {
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
@@ -37,10 +37,10 @@ textarea {
     outline: none;
 }
 
-textarea:focus {
+.textarea:focus {
     border-color: #333;
 }
 
-textarea::placeholder {
+.textarea::placeholder {
     color: #999999;
 }

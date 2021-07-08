@@ -1,4 +1,4 @@
-div {
+.snippet {
     display: block;
     max-width: 100%;
     flex-grow: 1;
@@ -12,12 +12,12 @@ div {
     overflow: hidden;
 }
 
-div + div {
+.snippet + .snippet {
     margin-top: 24px;
 }
 
 @media screen and (max-width: 599px) {
-    div {
+    .snippet {
         padding-left: 4px;
         padding-right: 4px;
 
@@ -25,7 +25,7 @@ div + div {
         box-shadow: none;
     }
 
-    div + div {
+    .snippet + .snippet {
         margin-top: 4px;
     }
 }
