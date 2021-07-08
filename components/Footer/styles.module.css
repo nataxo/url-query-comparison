@@ -1,17 +1,17 @@
-footer {
+.footer {
     display: flex;
     justify-content: flex-end;
 
     padding: 24px;
 }
 
-a {
+.a {
     display: inline-block;
     font-size: 0;
 }
 
 @media screen and (max-width: 599px) {
-    footer {
+    .footer {
         padding: 12px 8px;
         width: 100%;
     }

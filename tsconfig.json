@@ -1,25 +1,35 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "alwaysStrict": true,
-        "esModuleInterop": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "lib": ["dom", "es2017"],
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noEmit": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": false,
-        "suppressImplicitAnyIndexErrors": true,
-        "strict": true,
-        "target": "esnext",
-        "typeRoots": ["./src/types", "./node_modules/@types"],
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "resolveJsonModule": true
-    },
-    "exclude": ["node_modules"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_app.js"
+  ]
 }

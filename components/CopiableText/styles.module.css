@@ -1,4 +1,4 @@
-button {
+.button {
     display: inline-block;
     max-width: 100%;
     word-break: break-all;
@@ -24,11 +24,11 @@ button {
     -webkit-appearance: none;
 }
 
-Text[use|copied] {
+.text.copied {
     visibility: hidden;
 }
 
-Text[use|copied]:after {
+.text.copied:after {
     content: 'Copied!';
     display: inline-block;
     position: absolute;

@@ -1,5 +1,4 @@
-import styled from 'reshadow';
-import styles from './styles.css';
+import styles from './styles.module.css';
 
 type Props = {
   id: string,
@@ -11,12 +10,9 @@ type Props = {
   rows?: number,
 };
 
-
-const Wrapper = 'div';
-
-export default ({ id, label, value, onChange, placeholder, autofocus, rows = 2 }: Props) => styled(styles)(
-    <Wrapper>
-        <label htmlFor={id}>{label}</label>
+export default ({ id, label, value, onChange, placeholder, autofocus, rows = 2 }: Props) => (
+    <div className={styles.wrapper}>
+        <label className={styles.label} htmlFor={id}>{label}</label>
         <textarea
             id={id}
             value={value ?? ''}
@@ -24,6 +20,7 @@ export default ({ id, label, value, onChange, placeholder, autofocus, rows = 2 }
             placeholder={placeholder}
             rows={rows}
             autoFocus={autofocus}
+            className={styles.textarea}
         />
-    </Wrapper>
+    </div>
 );

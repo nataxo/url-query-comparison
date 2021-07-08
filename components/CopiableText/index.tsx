@@ -1,9 +1,6 @@
 import {useState} from 'react';
-import styled, {use} from 'reshadow';
-
-import styles from './styles.css';
-
-const Text = 'span';
+import cn from 'classnames';
+import styles from './styles.module.css';
 
 type Props = {
     value: string | null | undefined;
@@ -27,9 +24,9 @@ const CopiableText  = ({value}: Props) => {
         }
     };
 
-    return styled(styles)(
-        <button onClick={handleClick}>
-            <Text {...use({copied})}>{value || '-'}</Text>
+    return (
+        <button onClick={handleClick} className={styles.button}>
+            <span className={cn(styles.text, copied && styles.copied)}>{value || '-'}</span>
         </button>
     );
 };

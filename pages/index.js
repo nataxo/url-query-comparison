@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Main from '../components/Main';
 
-import '../components/global.css';
-
 const IndexPage = () => (
     <div>
         <Head>

@@ -1,13 +1,13 @@
-table + h4 {
+.table + .h4 {
     margin-top: 24px;
 }
 
-table {
+.table {
     border-spacing: 0;
     border-collapse: separate;
 }
 
-th {
+.table .th {
     color: #666;
     background-color: #fafafa;
     font-size: 12px;
@@ -15,23 +15,23 @@ th {
     text-transform: uppercase;
 }
 
-thead tr th:nth-child(1) {
+.table .thead .tr .th:nth-child(1) {
     border-radius: 4px 0 0 4px;
     border-left: 1px solid #eaeaea;
     min-width: 150px;
 }
 
-thead tr th:last-child {
+.table .thead .tr .th:last-child {
     border-radius: 0 4px 4px 0;
     border-right: 1px solid #eaeaea;
 }
 
-thead tr th {
+.table .thead .tr .th {
     border-top: 1px solid #eaeaea;
     text-align: left;
 }
 
-td, th {
+.table .td, .th {
     white-space: pre-wrap;
     word-wrap: break-word;
 
@@ -42,18 +42,18 @@ td, th {
     vertical-align: top;
 }
 
-td {
+.table .td {
     cursor: pointer;
 }
 
-SubRow {
+.subRow {
     padding: 0 4px 4px;
 }
 
-SubRow + SubRow {
+.subRow + .subRow {
     border-top: 1px solid #eaeaea;
     padding-top: 4px;
 }
-SubRow:last-child {
+.subRow:last-child {
     padding-bottom: 0;
 }

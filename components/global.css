@@ -17,8 +17,8 @@
     outline-width: 1px;
 }
 
-:global(html),
-:global(body) {
+html,
+body {
     width: 100vw;
     overflow-x: hidden;
     padding: 0;

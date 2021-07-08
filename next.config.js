@@ -1,10 +1,11 @@
-const withCSS = require('@zeit/next-css');
+// const withCSS = require('@zeit/next-css');
 
-module.exports = withCSS({
-    // next-css
-    cssModules: true,
-    cssLoaderOptions: {
-        importLoaders: 1,
-        localIdentName: '[local]___[hash:base64:5]',
-    },
-});
+module.exports = {
+    // // next-css
+    // cssModules: true,
+    // cssLoaderOptions: {
+    //     importLoaders: 1,
+    //     localIdentName: '[local]___[hash:base64:5]',
+    // },
+    webpack5: true
+};

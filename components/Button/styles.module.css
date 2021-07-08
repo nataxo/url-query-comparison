@@ -1,14 +1,13 @@
-button + button {
+.button + .button {
     margin-left: 20px;
 }
 
-button {
+.button {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 0.6px;
     white-space: nowrap;
     min-width: 100px;
 
@@ -28,39 +27,39 @@ button {
     overflow: hidden;
 }
 
-button:active {
+.button:active {
     top: 1px;
 }
 
-button[type='submit'] {
+.button[type='submit'] {
     background-color: #0076ff;
     border-color: #0076ff;
     color: #fafbfc;
 }
 
-button[type='submit']:hover {
+.button[type='submit']:hover {
     background-color: #fafbfc;
     color: #0076ff;
 }
 
-button[type='reset'] {
+.button[type='reset'] {
     background-color: #fff;
     border-color: #eaeaea;
     color: #666;
 }
 
-button[type='reset']:hover {
+.button[type='reset']:hover {
     background-color: #fff;
     border: 1px solid #000;
     color: #000;
 }
 
 @media screen and (max-width: 599px) {
-    button {
+    .button {
         flex-grow: 1;
     }
 
-    button + button {
+    .button + .button {
         margin-left: 12px;
     }
 }

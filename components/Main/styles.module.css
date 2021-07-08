@@ -1,4 +1,4 @@
-main {
+.main {
     display: flex;
     flex-direction: column;
 
@@ -6,29 +6,29 @@ main {
     max-width: 100%;
 }
 
-h1,
-h2 {
+.h1,
+.h2 {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 12px;
 }
 
-h1 {
+.h1 {
     margin: 0 0 24px;
 }
 
-Info {
+.info {
     color: #666;
 }
 
 @media screen and (max-width: 599px) {
-    main {
+    .main {
         padding: 20px 10px;
         width: 100%;
         overflow-x: hidden;
     }
 
-    h1 {
+    .h1 {
         margin: 0 0 12px;
     }
 }
