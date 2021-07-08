@@ -12,7 +12,9 @@
 }
 
 :focus {
-    outline-color: #0076ff;
+    outline-color: #0761D1;
+    outline-offset: 2px;
+    outline-width: 1px;
 }
 
 :global(html),
